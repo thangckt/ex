@@ -1,0 +1,2663 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="C.Thang Nguyen">
+      
+      
+        <link rel="canonical" href="https://thangckt.github.io/cluster/compile/FFTW/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../1images/one-note-128-o.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>FFTW - C.Thang Nguyen</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.c56a4f2c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../_extra_theme/extra_css/full_width.css">
+    
+      <link rel="stylesheet" href="../../../_extra_theme/extra_css/font_size.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-QM7DWGY7ZT"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-QM7DWGY7ZT",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-QM7DWGY7ZT",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+    
+
+    <!-- Add what you want to append to the <head> here -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6260920536615462" crossorigin="anonymous"></script>
+
+    <!-- HTML5 live streaming: (Note: HLS is "built-in" to video.js, as of version 4.x, so we should NOT include HLS support separately)-->
+    <link href="https://vjs.zencdn.net/8.18.1/video-js.css" rel="stylesheet" />
+
+    <!-- Use posthog.com for analytic -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_ntKnH0z7UzXKAPNn9V0igkr0yKqvI24IRitmTTTDBtJ',{api_host:'https://app.posthog.com'})
+    </script>
+
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fftw" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="C.Thang Nguyen" class="md-header__button md-logo" aria-label="C.Thang Nguyen" data-md-component="logo">
+      
+  <img src="../../../1images/one-note-128-o.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            C.Thang Nguyen
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FFTW
+            
+          </span>
+        </div>
+      </div>
+    </div>
+      
+        
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org" class="md-tabs__link">
+        
+  
+    
+  
+  home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org/alff_doc" class="md-tabs__link">
+        
+  
+    
+  
+  alff
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org/thmd_doc" class="md-tabs__link">
+        
+  
+    
+  
+  thmd
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org/thml_doc" class="md-tabs__link">
+        
+  
+    
+  
+  thml
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org/thutil" class="md-tabs__link">
+        
+  
+    
+  
+  thutil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org/thvid_doc" class="md-tabs__link">
+        
+  
+    
+  
+  thvid
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  cluster
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ref/" class="md-tabs__link">
+          
+  
+    
+  
+  ref
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../odd/" class="md-tabs__link">
+          
+  
+    
+  
+  odd
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tv/" class="md-tabs__link">
+        
+  
+    
+  
+  tv
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../contact/" class="md-tabs__link">
+        
+  
+    
+  
+  contact
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="C.Thang Nguyen" class="md-nav__button md-logo" aria-label="C.Thang Nguyen" data-md-component="logo">
+      
+  <img src="../../../1images/one-note-128-o.png" alt="logo">
+
+    </a>
+    C.Thang Nguyen
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org/alff_doc" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    alff
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org/thmd_doc" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    thmd
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org/thml_doc" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    thml
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org/thutil" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    thutil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org/thvid_doc" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    thvid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    cluster
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            cluster
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Compile
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Compile
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LAMMPS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LAMMPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GCC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GCC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LLVM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LLVM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenMPI_4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenMPI 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenMPI_5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenMPI-5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenMPI_windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MPICH2 on Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenMPI_conda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Openmpi in Conda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Plumed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compile PLUMED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CP2K/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CP2K
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../binutils_linker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binutils linker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CMake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CMake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Libtool/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Libtool
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UCX_UCC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UCX UCC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PMIX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PMIX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dependencies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Some Dependencies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BLACS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BLACS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenBLAS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenBLAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scaLAPACK_BLACS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scaLAPACK and BLACS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Useful
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Useful
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../refPage/cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../refPage/docs_syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation syntax
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ref/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ref
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            ref
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ref/video/1_research_ethic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Researh Ethics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reading
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Reading
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ref/reading/basic_science/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ref/reading/computational/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Computational
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ref/reading/mechanic_solid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mechanics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Video_series
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            Video_series
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ref/video/2_calculus_essence/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The essence of calculus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    English
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            English
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ref/english/english_learn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    English
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ref/english/vocabulary_img/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vocabulary by images
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ref/chat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../odd/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    odd
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            odd
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Music
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            Music
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/music/music_classic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classic pieces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/music/music_saigon_fall/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Saigon memorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/music/music_tinh_ca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Love theme
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/music/music_foreigned/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Foreigned
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/music/music_viet_su/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Historical theme
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/music/music_guitar_cover/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guitar covers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/music/music_sleep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sleeping
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vocal
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            Vocal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/music/Lyrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lyrical Chord
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_4" id="__nav_9_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reading list
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_4">
+            <span class="md-nav__icon md-icon"></span>
+            Reading list
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/reading/read_list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reading list
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    blog
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2024/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2022/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/latex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Latex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/ml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/science/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tv
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#download-fftw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download FFTW
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compile-with-ompi-gcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compile with OMPI + GCC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compile with OMPI + GCC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usc1" class="md-nav__link">
+    <span class="md-ellipsis">
+      USC1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAN-GPU
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-make-module-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Make module file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usc2" class="md-nav__link">
+    <span class="md-ellipsis">
+      USC2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="USC2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-ompi-llvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      With OMPI + LLVM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-ompi-gcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      With OMPI + GCC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.dev/thangckt/thangckt.github.io/tree/main/_docs/cluster/compile/FFTW.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<!-- TOC tocDepth:2..3 chapterDepth:2..6 -->
+
+<ul>
+<li><a href="#fftw">FFTW</a></li>
+<li><a href="#download-fftw">Download FFTW</a></li>
+<li><a href="#compile-with-ompi--gcc">Compile with OMPI + GCC</a><ul>
+<li><a href="#usc1">USC1</a></li>
+<li><a href="#usc2">USC2</a></li>
+<li><a href="#can-gpu">CAN-GPU</a></li>
+</ul>
+</li>
+<li><a href="#4-make-module-file">4. Make module file</a></li>
+<li><a href="#compile-with-ompi--llvm">Compile with OMPI + LLVM</a><ul>
+<li><a href="#usc2-1">USC2</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+<h1 id="fftw">FFTW<a class="headerlink" href="#fftw" title="Permanent link">&para;</a></h1>
+<ul>
+<li>NOTE: To compile with mpi-enable, need to use openMPI-compiler: MPICC=mpicc</li>
+<li><a href="http://www.fftw.org/fftw3_doc/Installation-on-Unix.html#Installation-on-Unix">Installation guide</a></li>
+</ul>
+<h2 id="download-fftw">Download FFTW<a class="headerlink" href="#download-fftw" title="Permanent link">&para;</a></h2>
+<p><a href="http://www.fftw.org/download.html">Download FFTW-3.3.10</a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tar<span class="w"> </span>-xvzf<span class="w"> </span>fftw-3.3.10.tar.gz
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>fftw-3.3.10
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+</code></pre></div>
+<h2 id="compile-with-ompi-gcc">Compile with OMPI + GCC<a class="headerlink" href="#compile-with-ompi-gcc" title="Permanent link">&para;</a></h2>
+<p>Compiling FFTW 3.3.10 (Single,Double)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>--enable-sse2:<span class="w"> </span>Single,<span class="w"> </span>Double
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>--enable-long-double<span class="w"> </span>:<span class="w"> </span>Long-Double<span class="w"> </span>Precision
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>--enable-float<span class="w"> </span>:<span class="w"> </span>Single
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>--enable-shared:<span class="w"> </span>fBIC
+</code></pre></div>
+<h3 id="usc1">USC1<a class="headerlink" href="#usc1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>module<span class="w"> </span>load<span class="w"> </span>mpi/ompi5.0.0-gcc11.2
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/uhome/p001cao/app/openmpi/5.0.0-gcc11.2-eagle/bin:<span class="nv">$PATH</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span>mpicc<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">CXX</span><span class="o">=</span>mpic++<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">FORTRAN</span><span class="o">=</span>mpifort<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">F90</span><span class="o">=</span>mpif90
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>../configure<span class="w"> </span>--enable-sse2<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>--enable-threads<span class="w"> </span>--enable-openmp<span class="w"> </span>--enable-mpi<span class="w"> </span>--enable-shared<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>--prefix<span class="o">=</span>/uhome/p001cao/app/fftw/3.3.10-ompi5.0-gcc11.2
+</code></pre></div>
+<h3 id="can-gpu">CAN-GPU<a class="headerlink" href="#can-gpu" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>module<span class="w"> </span>load<span class="w"> </span>mpi/ompi4.1-gcc7.4-cuda
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/home/thang/app/openmpi/4.1.1-gcc7.4-cuda/bin
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span>mpicc<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">CXX</span><span class="o">=</span>mpic++<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">FORTRAN</span><span class="o">=</span>mpifort<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">F90</span><span class="o">=</span>mpif90
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>../configure<span class="w"> </span>--enable-sse2<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>--enable-threads<span class="w"> </span>--enable-openmp<span class="w"> </span>--enable-mpi<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>--prefix<span class="o">=</span>/home/thang/app/fftw/3.3.8-ompi4.1-gcc7.4
+</code></pre></div>
+<p>make -j 12
+make install</p>
+<p>validate:
+Inside "/uhome/p001cao/app/fftw/3.3.8-ompi4.1-gcc10.3/lib" you should see at least the files below
+libfftw3.a libfftw3_mpi.a libfftw3_omp.a libfftw3_threads.a .... ....</p>
+<h2 id="4-make-module-file">4. Make module file<a class="headerlink" href="#4-make-module-file" title="Permanent link">&para;</a></h2>
+<p>at directory: /uhome/p001cao/local/share/lmodfiles/mpi&rarr; create file "ompi4.1.1-gcc11.2-noUCX"</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># for Tcl script use only</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># for Tcl script use only</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">set</span><span class="w">     </span>topdir<span class="w">          </span>/uhome/p001cao/app/fftw/3.3.10-ompi5.0-gcc11.2
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>prepend-path<span class="w">    </span>PATH<span class="w">                </span><span class="nv">$topdir</span>/bin
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>prepend-path<span class="w">    </span>INCLUDE<span class="w">             </span><span class="nv">$topdir</span>/include
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>prepend-path<span class="w">    </span>LD_LIBRARY_PATH<span class="w">     </span><span class="nv">$topdir</span>/lib
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>prepend-path<span class="w">    </span>PKG_CONFIG_PATH<span class="w">     </span><span class="nv">$topdir</span>/lib/pkgconfig
+</code></pre></div>
+<h2 id="usc2">USC2<a class="headerlink" href="#usc2" title="Permanent link">&para;</a></h2>
+<h3 id="with-ompi-llvm">With OMPI + LLVM<a class="headerlink" href="#with-ompi-llvm" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span>/home1/p001cao/0SourceCode/tooldev
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># tar -xvzf fftw-3.3.10.tar.gz</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">cd</span><span class="w"> </span>fftw-3.3.10
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>rm<span class="w"> </span>-rf<span class="w"> </span>build_LLVM<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mkdir<span class="w"> </span>build_LLVM<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build_LLVM
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>module<span class="w"> </span>load<span class="w"> </span>mpi/ompi4.1.x-clang17
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/home1/p001cao/app/openmpi/4.1.x-clang17/bin:<span class="nv">$PATH</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span>mpicc<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">CXX</span><span class="o">=</span>mpic++<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">FC</span><span class="o">=</span>mpifort
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;-fuse-ld=lld -lrt&quot;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="nb">export</span><span class="w"> </span><span class="nv">myPREFIX</span><span class="o">=</span>/home1/p001cao/app/mpi/fftw3.3.10-ompi4.1.x-clang17
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>../configure<span class="w"> </span>--enable-sse2<span class="w"> </span>--enable-threads<span class="w"> </span>--enable-openmp<span class="w"> </span>--enable-mpi<span class="w"> </span>--enable-shared<span class="w"> </span>--prefix<span class="o">=</span><span class="si">${</span><span class="nv">myPREFIX</span><span class="si">}</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>make<span class="w"> </span>-j<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>install
+</code></pre></div>
+<h3 id="with-ompi-gcc">With OMPI + GCC<a class="headerlink" href="#with-ompi-gcc" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span><span class="w"> </span>fftw-3.3.10
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>rm<span class="w"> </span>-rf<span class="w"> </span>build_ase<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mkdir<span class="w"> </span>build_ase<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build_ase
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>module<span class="w"> </span>load<span class="w"> </span>mpi/ompi4.1.5-gcc9
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nv">OPENMPI</span><span class="o">=</span>/home1/p001cao/app/openmpi/4.1.5-gcc9
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$OPENMPI</span>/bin:<span class="nv">$PATH</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span>mpicc<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">CXX</span><span class="o">=</span>mpic++<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">FC</span><span class="o">=</span>mpifort<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">F90</span><span class="o">=</span>mpif90
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nb">export</span><span class="w"> </span><span class="nv">myPREFIX</span><span class="o">=</span>/home1/p001cao/app/mpi/fftw3.3.10-ompi4.1.5-gcc9
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>../configure<span class="w"> </span>--enable-sse2<span class="w"> </span>--enable-threads<span class="w"> </span>--enable-openmp<span class="w"> </span>--enable-mpi<span class="w"> </span>--enable-shared<span class="w"> </span>--prefix<span class="o">=</span><span class="si">${</span><span class="nv">myPREFIX</span><span class="si">}</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>make<span class="w"> </span>-j<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>install
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 <a href="https://thangckt.github.io">thangckt</a>
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.expand", "navigation.indexes", "navigation.tracking", "navigation.top", "search.suggest", "toc.follow", "navigation.tabs", "navigation.tabs.sticky", "navigation.tabs.header", "content.action.edit", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.9b94f2f7.min.js"></script>
+      
+        <script src="../../../_extra_theme/extra_js/gg_adsense.js"></script>
+      
+    
+  </body>
+</html>

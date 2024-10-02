@@ -1,0 +1,2725 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="C.Thang Nguyen">
+      
+      
+        <link rel="canonical" href="https://thangckt.github.io/blog/category/latex/">
+      
+      
+        <link rel="prev" href="../../">
+      
+      
+        <link rel="next" href="../ml/">
+      
+      
+      <link rel="icon" href="../../../1images/one-note-128-o.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Latex - C.Thang Nguyen</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.c56a4f2c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../_extra_theme/extra_css/full_width.css">
+    
+      <link rel="stylesheet" href="../../../_extra_theme/extra_css/font_size.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-QM7DWGY7ZT"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-QM7DWGY7ZT",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-QM7DWGY7ZT",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+    
+
+    <!-- Add what you want to append to the <head> here -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6260920536615462" crossorigin="anonymous"></script>
+
+    <!-- HTML5 live streaming: (Note: HLS is "built-in" to video.js, as of version 4.x, so we should NOT include HLS support separately)-->
+    <link href="https://vjs.zencdn.net/8.18.1/video-js.css" rel="stylesheet" />
+
+    <!-- Use posthog.com for analytic -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_ntKnH0z7UzXKAPNn9V0igkr0yKqvI24IRitmTTTDBtJ',{api_host:'https://app.posthog.com'})
+    </script>
+
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#latex" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="C.Thang Nguyen" class="md-header__button md-logo" aria-label="C.Thang Nguyen" data-md-component="logo">
+      
+  <img src="../../../1images/one-note-128-o.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            C.Thang Nguyen
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Latex
+            
+          </span>
+        </div>
+      </div>
+    </div>
+      
+        
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org" class="md-tabs__link">
+        
+  
+    
+  
+  home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org/alff_doc" class="md-tabs__link">
+        
+  
+    
+  
+  alff
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org/thmd_doc" class="md-tabs__link">
+        
+  
+    
+  
+  thmd
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org/thml_doc" class="md-tabs__link">
+        
+  
+    
+  
+  thml
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org/thutil" class="md-tabs__link">
+        
+  
+    
+  
+  thutil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org/thvid_doc" class="md-tabs__link">
+        
+  
+    
+  
+  thvid
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cluster/" class="md-tabs__link">
+          
+  
+    
+  
+  cluster
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ref/" class="md-tabs__link">
+          
+  
+    
+  
+  ref
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../odd/" class="md-tabs__link">
+          
+  
+    
+  
+  odd
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tv/" class="md-tabs__link">
+        
+  
+    
+  
+  tv
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../contact/" class="md-tabs__link">
+        
+  
+    
+  
+  contact
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="C.Thang Nguyen" class="md-nav__button md-logo" aria-label="C.Thang Nguyen" data-md-component="logo">
+      
+  <img src="../../../1images/one-note-128-o.png" alt="logo">
+
+    </a>
+    C.Thang Nguyen
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org/alff_doc" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    alff
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org/thmd_doc" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    thmd
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org/thml_doc" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    thml
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org/thutil" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    thutil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org/thvid_doc" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    thvid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cluster/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    cluster
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            cluster
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Compile
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Compile
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/LAMMPS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LAMMPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/GCC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GCC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/LLVM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LLVM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/OpenMPI_4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenMPI 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/OpenMPI_5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenMPI-5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/OpenMPI_windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MPICH2 on Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/OpenMPI_conda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Openmpi in Conda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/Plumed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compile PLUMED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/CP2K/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CP2K
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/binutils_linker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binutils linker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/CMake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CMake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/Libtool/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Libtool
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/UCX_UCC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UCX UCC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/PMIX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PMIX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/Dependencies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Some Dependencies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/BLACS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BLACS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/OpenBLAS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenBLAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/compile/scaLAPACK_BLACS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scaLAPACK and BLACS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Useful
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Useful
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/refPage/cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cluster/refPage/docs_syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation syntax
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ref/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ref
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            ref
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ref/video/1_research_ethic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Researh Ethics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reading
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Reading
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ref/reading/basic_science/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ref/reading/computational/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Computational
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ref/reading/mechanic_solid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mechanics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Video_series
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            Video_series
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ref/video/2_calculus_essence/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The essence of calculus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    English
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            English
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ref/english/english_learn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    English
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ref/english/vocabulary_img/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vocabulary by images
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ref/chat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../odd/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    odd
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            odd
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Music
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            Music
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/music/music_classic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classic pieces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/music/music_saigon_fall/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Saigon memorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/music/music_tinh_ca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Love theme
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/music/music_foreigned/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Foreigned
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/music/music_viet_su/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Historical theme
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/music/music_guitar_cover/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guitar covers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/music/music_sleep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sleeping
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vocal
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            Vocal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/music/Lyrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lyrical Chord
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_4" id="__nav_9_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reading list
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_4">
+            <span class="md-nav__icon md-icon"></span>
+            Reading list
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../odd/reading/read_list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reading list
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    blog
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2024/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2022/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+      
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Latex
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Latex
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bibtex-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      BibTeX Generator
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../science/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tv
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bibtex-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      BibTeX Generator
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <h1 id="latex">Latex<a class="headerlink" href="#latex" title="Permanent link">&para;</a></h1>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://thang.eu.org/1images/thang_pic.jpg" alt="C.Thang Nguyen">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-01-25 00:00:00">January 25, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../science/" class="md-meta__link">Science</a>, 
+              <a href="./" class="md-meta__link">Latex</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="bibtex-generator"><a class="toclink" href="../../2024/01/25/bibtex_generator/">BibTeX Generator</a></h2>
+<p>Have you ever found yourself weary and uninspired from the tedious task of manually creating BibTeX entries for your paper?</p>
+<p>There are, indeed, support tools and plugins that are bundled with reference managers such as Zotero, Mendeley, etc. These tools can automate the generation of a <code>.bib</code> file. To use them, you need to install a reference manager, its associated plugins, and a library of papers on your computer. However, these tools are not flawless. The BibTeX entries they generate often contain incomplete information, are poorly formatted, and include numerous unnecessary fields. You then still need to manually check and correct the entries.</p>
+<p>There are the times you just need to cite a paper or two, and you don't want to go through the hassle of the aforementioned complex process. In such situations, a simple tool that allows you to quickly copy and paste a BibTeX entry into your <code>.bib</code> file would be ideal. Think of such a simple tool, I have looked around the Chrome extension store to see if there is any that can pick up the Bibtex while you are browsing the paper. I found some, but they do not really work.</p>
+<p>Therefore, I decided to create my own tool to address this dilemma. I developed a Chrome extension that can generate the BibTeX entry for any browsing URL with just one click. I named it the <a href="./">1click BibTeX</a>. It delivers exactly what it is expected and has proven to be quite helpful. This extension, along with the <a href="https://thang.eu.org/thmd_doc/latex/">Latex tools</a>, will ensure that the manuscript's citations are properly formatted before they are delivered to the journal.</p>
+<h3 id="usage"><a class="toclink" href="../../2024/01/25/bibtex_generator/#usage">Usage</a></h3>
+<p>Install the <a href="./">1click BibTeX</a> extension on your Chrome browser. Then, whenever you're browsing a paper or any URL, just click on the extension icon, and the BibTeX entry will be instantly generated and copied to your clipboard. The remaining thing is just paste it to your <code>.bib</code> file.</p>
+<p align="center">
+<img src="https://thang.eu.org/blog/image/bibtex_demo.png" alt="BibTeX generator" width="600" style="align: center;" />
+</p>
+
+<p>I've tested the extension on numerous publishers and websites with varying structures and it works consistently as it was designed. The tested publishers include Elsevier, Wiley, ACS, IOP, AIP, APS, arXiv,...</p>
+<p>Below are some examples of BibTeX entries generated by the extension <a href="./">1click BibTeX</a>:</p>
+<ul>
+<li>Article on Elsevier: <a href="https://doi.org/10.1016/j.commatsci.2018.10.023">10.1016/j.commatsci.2018.10.023</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nc">@article</span><span class="p">{</span><span class="nl">nguyen2019pattern</span><span class="p">,</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Pattern transformation induced by elastic instability of metallic porous structures}</span><span class="p">,</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Cao Thang Nguyen and Duc Tam Ho and Seung Tae Choi and Doo-Man Chun and Sung Youb Kim }</span><span class="p">,</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2019}</span><span class="p">,</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">    </span><span class="na">month</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2}</span><span class="p">,</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">    </span><span class="na">journal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Computational Materials Science}</span><span class="p">,</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">    </span><span class="na">publisher</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Elsevier}</span><span class="p">,</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">    </span><span class="na">volume</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{157}</span><span class="p">,</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">    </span><span class="na">pages</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{17-24}</span><span class="p">,</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">    </span><span class="na">doi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{10.1016/j.commatsci.2018.10.023}</span><span class="p">,</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">    </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://www.sciencedirect.com/science/article/abs/pii/S0927025618306955?via%3Dihub}</span><span class="p">,</span>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">    </span><span class="na">accessDate</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Jan 25, 2024}</span>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Article on Wiley: <a href="https://doi.org/10.1002/adts.202300538">10.1002/adts.202300538</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nc">@article</span><span class="p">{</span><span class="nl">nguyen2024an</span><span class="p">,</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{An Enhanced Sampling Approach for Computing the Free Energy of Solid Surface and Solid–Liquid Interface}</span><span class="p">,</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Cao Thang Nguyen and Duc Tam Ho and Sung Youb Kim}</span><span class="p">,</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2024}</span><span class="p">,</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="na">month</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{1}</span><span class="p">,</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">    </span><span class="na">journal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Advanced Theory and Simulations}</span><span class="p">,</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">    </span><span class="na">publisher</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{John Wiley &amp; Sons, Ltd}</span><span class="p">,</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">    </span><span class="na">volume</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{7}</span><span class="p">,</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">    </span><span class="na">number</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{1}</span><span class="p">,</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">    </span><span class="na">pages</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2300538}</span><span class="p">,</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="w">    </span><span class="na">doi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{10.1002/adts.202300538}</span><span class="p">,</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="w">    </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://onlinelibrary.wiley.com/doi/10.1002/adts.202300538}</span><span class="p">,</span>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">    </span><span class="na">accessDate</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Jan 25, 2024}</span>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Google Book New: <a href="https://www.google.co.kr/books/edition/America_the_Vietnam_War_and_the_World/9kn6qYwsGs4C?hl=en&amp;gbpv=0">America, the Vietnam War, and the World</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nc">@book</span><span class="p">{</span><span class="nl">daum2003america</span><span class="p">,,</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{America, the Vietnam War, and the World}</span><span class="p">,</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Andreas W. Daum and Lloyd C. Gardner and Wilfried Mausbach}</span><span class="p">,</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2003}</span><span class="p">,</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">    </span><span class="na">month</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{7}</span><span class="p">,</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">    </span><span class="na">publisher</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Cambridge University Press}</span><span class="p">,</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="na">isbn</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{052100876X}</span><span class="p">,</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">    </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://www.google.co.kr/books/edition/America_the_Vietnam_War_and_the_World/9kn6qYwsGs4C?hl=en&amp;gbpv=0}</span><span class="p">,</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">    </span><span class="na">accessDate</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Jan 25, 2024}</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Google Book Classic: <a href="https://books.google.co.kr/books?id=-GDwL2s5sJoC&amp;source=gbs_book_other_versions">Currency Wars</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nc">@book</span><span class="p">{</span><span class="nl">rickards2011currency</span><span class="p">,</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Currency Wars}</span><span class="p">,</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">    </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{James Rickards}</span><span class="p">,</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">    </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2011}</span><span class="p">,</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span><span class="na">month</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{11}</span><span class="p">,</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">    </span><span class="na">publisher</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Penguin}</span><span class="p">,</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">    </span><span class="na">isbn</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{110155889X}</span><span class="p">,</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">    </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://books.google.co.kr/books?id=-GDwL2s5sJoC&amp;source=gbs_book_other_versions}</span><span class="p">,</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">    </span><span class="na">accessDate</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Jan 25, 2024}</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Blog post: <a href="https://deci.ai/blog/decicoder-6b-the-best-multi-language-code-generation-llm-in-its-class/">https://deci.ai/blog/decicoder-6b-the-best-multi-language-code-generation-llm-in-its-class/</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nc">@misc</span><span class="p">{</span><span class="nl">deci2024introducing</span><span class="p">,</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Introducing DeciCoder-6B: The Best Multi-Language Code LLM in Its Class}</span><span class="p">,</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Deci}</span><span class="p">,</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2024}</span><span class="p">,</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span><span class="na">month</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{1}</span><span class="p">,</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">    </span><span class="na">publisher</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Deci}</span><span class="p">,</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">    </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://deci.ai/blog/decicoder-6b-the-best-multi-language-code-generation-llm-in-its-class/}</span><span class="p">,</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">    </span><span class="na">accessDate</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Jan 25, 2024}</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Packages on Zenodo: <a href="https://zenodo.org/records/7751762">https://zenodo.org/records/7751762</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nc">@misc</span><span class="p">{</span><span class="nl">kai2023forcefield</span><span class="p">,</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Force-field files for &quot;Noble gas (He, Ne and Ar) solubilities in high-pressure silicate melts calculated based on deep potential modeling&quot;}</span><span class="p">,</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Wang, Kai and Lu, Xiancai and Liu, Xiandong and Yin, Kun}</span><span class="p">,</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2023}</span><span class="p">,</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">    </span><span class="na">month</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{3}</span><span class="p">,</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">    </span><span class="na">publisher</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Zenodo}</span><span class="p">,</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">    </span><span class="na">doi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{10.5281/zenodo.7751762}</span><span class="p">,</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="w">    </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://zenodo.org/records/7751762}</span><span class="p">,</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="w">    </span><span class="na">accessDate</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Jan 25, 2024}</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Bibtex this page</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nc">@misc</span><span class="p">{</span><span class="nl">nguyen2024bibtex</span><span class="p">,</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{BibTeX Generator}</span><span class="p">,</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Cao Thang Nguyen}</span><span class="p">,</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2024}</span><span class="p">,</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">    </span><span class="na">month</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{1}</span><span class="p">,</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://thang.eu.org/blog/2024/01/25/bibtex_generator}</span><span class="p">,</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">    </span><span class="na">accessDate</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Jan 25, 2024}</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="p">}</span>
+</code></pre></div>
+<p>In summary, the new extension <a href="./">1click BibTeX</a> works well for most websites with varying data structures.</p>
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Blog">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Blog
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ml/" class="md-footer__link md-footer__link--next" aria-label="Next: ML">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                ML
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 <a href="https://thangckt.github.io">thangckt</a>
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.expand", "navigation.indexes", "navigation.tracking", "navigation.top", "search.suggest", "toc.follow", "navigation.tabs", "navigation.tabs.sticky", "navigation.tabs.header", "content.action.edit", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.9b94f2f7.min.js"></script>
+      
+        <script src="../../../_extra_theme/extra_js/gg_adsense.js"></script>
+      
+    
+  </body>
+</html>

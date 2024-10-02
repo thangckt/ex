@@ -1,0 +1,2859 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="you can now add a badge to your README, showing that your
+">
+      
+      
+        <meta name="author" content="C.Thang Nguyen">
+      
+      
+        <link rel="canonical" href="https://thangckt.github.io/blog/2022/11/30/Deep-Potential/">
+      
+      
+      
+        <link rel="next" href="../../../../2024/01/25/bibtex_generator/">
+      
+      
+      <link rel="icon" href="../../../../../1images/one-note-128-o.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Adding - C.Thang Nguyen</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.c56a4f2c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../../../_extra_theme/extra_css/full_width.css">
+    
+      <link rel="stylesheet" href="../../../../../_extra_theme/extra_css/font_size.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-QM7DWGY7ZT"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-QM7DWGY7ZT",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-QM7DWGY7ZT",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+    
+
+    <!-- Add what you want to append to the <head> here -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6260920536615462" crossorigin="anonymous"></script>
+
+    <!-- HTML5 live streaming: (Note: HLS is "built-in" to video.js, as of version 4.x, so we should NOT include HLS support separately)-->
+    <link href="https://vjs.zencdn.net/8.18.1/video-js.css" rel="stylesheet" />
+
+    <!-- Use posthog.com for analytic -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_ntKnH0z7UzXKAPNn9V0igkr0yKqvI24IRitmTTTDBtJ',{api_host:'https://app.posthog.com'})
+    </script>
+
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#accelerated-molecular-simulation-using-deep-potential-workflow-with-ngc" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="C.Thang Nguyen" class="md-header__button md-logo" aria-label="C.Thang Nguyen" data-md-component="logo">
+      
+  <img src="../../../../../1images/one-note-128-o.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            C.Thang Nguyen
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Adding
+            
+          </span>
+        </div>
+      </div>
+    </div>
+      
+        
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org" class="md-tabs__link">
+        
+  
+    
+  
+  home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org/alff_doc" class="md-tabs__link">
+        
+  
+    
+  
+  alff
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org/thmd_doc" class="md-tabs__link">
+        
+  
+    
+  
+  thmd
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org/thml_doc" class="md-tabs__link">
+        
+  
+    
+  
+  thml
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org/thutil" class="md-tabs__link">
+        
+  
+    
+  
+  thutil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="http://thang.eu.org/thvid_doc" class="md-tabs__link">
+        
+  
+    
+  
+  thvid
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../cluster/" class="md-tabs__link">
+          
+  
+    
+  
+  cluster
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../ref/" class="md-tabs__link">
+          
+  
+    
+  
+  ref
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../odd/" class="md-tabs__link">
+          
+  
+    
+  
+  odd
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+    
+  
+  blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tv/" class="md-tabs__link">
+        
+  
+    
+  
+  tv
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../contact/" class="md-tabs__link">
+        
+  
+    
+  
+  contact
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="C.Thang Nguyen" class="md-nav__button md-logo" aria-label="C.Thang Nguyen" data-md-component="logo">
+      
+  <img src="../../../../../1images/one-note-128-o.png" alt="logo">
+
+    </a>
+    C.Thang Nguyen
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org/alff_doc" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    alff
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org/thmd_doc" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    thmd
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org/thml_doc" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    thml
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org/thutil" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    thutil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://thang.eu.org/thvid_doc" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    thvid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../cluster/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    cluster
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            cluster
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Compile
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Compile
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/LAMMPS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LAMMPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/GCC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GCC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/LLVM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LLVM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/OpenMPI_4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenMPI 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/OpenMPI_5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenMPI-5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/OpenMPI_windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MPICH2 on Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/OpenMPI_conda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Openmpi in Conda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/Plumed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compile PLUMED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/CP2K/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CP2K
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/binutils_linker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binutils linker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/CMake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CMake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/Libtool/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Libtool
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/UCX_UCC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UCX UCC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/PMIX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PMIX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/Dependencies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Some Dependencies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/BLACS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BLACS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/OpenBLAS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenBLAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/compile/scaLAPACK_BLACS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scaLAPACK and BLACS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Useful
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Useful
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/refPage/cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../cluster/refPage/docs_syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation syntax
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../ref/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ref
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            ref
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ref/video/1_research_ethic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Researh Ethics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reading
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Reading
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ref/reading/basic_science/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ref/reading/computational/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Computational
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ref/reading/mechanic_solid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mechanics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Video_series
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            Video_series
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ref/video/2_calculus_essence/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The essence of calculus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    English
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            English
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ref/english/english_learn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    English
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ref/english/vocabulary_img/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vocabulary by images
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ref/chat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../odd/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    odd
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            odd
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Music
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            Music
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../odd/music/music_classic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classic pieces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../odd/music/music_saigon_fall/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Saigon memorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../odd/music/music_tinh_ca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Love theme
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../odd/music/music_foreigned/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Foreigned
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../odd/music/music_viet_su/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Historical theme
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../odd/music/music_guitar_cover/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guitar covers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../odd/music/music_sleep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sleeping
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vocal
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            Vocal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../odd/music/Lyrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lyrical Chord
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_4" id="__nav_9_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reading list
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_4">
+            <span class="md-nav__icon md-icon"></span>
+            Reading list
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../odd/reading/read_list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reading list
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    blog
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2022/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/latex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Latex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/science/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tv
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Containers?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-data-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training data generation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vasp" class="md-nav__link">
+    <span class="md-ellipsis">
+      VASP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-espresso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Espresso
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-data-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training data preparation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-potential-model-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Potential model training
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-export-and-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model export and compression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-deployment-in-lammps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model deployment in LAMMPS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://thang.eu.org/1images/thang_pic.jpg" alt="C.Thang Nguyen">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://thang.eu.org/">C.Thang Nguyen</a>
+                        
+                      </strong>
+                      <br>
+                      Creator
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2022-11-30 00:00:00" class="md-ellipsis">November 30, 2022</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/science/">Science</a>, 
+                              <a href="../../../../category/ml/">ML</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              14 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+  
+    <a href="https://github.dev/thangckt/thangckt.github.io/tree/main/_docs/blog/posts/2022_DeePMD_kit.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="accelerated-molecular-simulation-using-deep-potential-workflow-with-ngc">Accelerated Molecular Simulation Using Deep Potential Workflow with NGC<a class="headerlink" href="#accelerated-molecular-simulation-using-deep-potential-workflow-with-ngc" title="Permanent link">&para;</a></h1>
+<p>Credit: <a href="https://developer.nvidia.com/blog/accelerated-molecular-simulation-using-deep-potential-workflow-with-ngc/">NVIDIA's blog</a></p>
+<p align="center">
+<img src="https://developer-blogs.nvidia.com/wp-content/uploads/2021/10/Deep-Potential-Fig-1.png"   /> </p>
+
+<p>Molecular simulation communities have faced the accuracy-versus-efficiency dilemma in modeling the potential energy surface and interatomic forces for decades. Deep Potential, the artificial neural network force field, solves this problem by combining the speed of classical molecular dynamics (MD) simulation with the accuracy of density functional theory (DFT) calculation.1 This is achieved by using the GPU-optimized package DeePMD-kit, which is a deep learning package for many-body potential energy representation and MD simulation.2</p>
+<p>This post provides an end-to-end demonstration of training a neural network potential for the 2D material graphene and using it to drive MD simulation in the open-source platform Large-scale Atomic/Molecular Massively Parallel Simulator (LAMMPS).3 Training data can be obtained either from the Vienna Ab initio Simulation Package (VASP)4, or Quantum ESPRESSO (QE).5</p>
+<p>A seamless integration of molecular modeling, machine learning, and high-performance computing (HPC) is demonstrated with the combined efficiency of molecular dynamics with ab initio accuracy — that is entirely driven through a container-based workflow. Using AI techniques to fit the interatomic forces generated by DFT, the accessible time and size scales can be boosted several orders of magnitude with linear scaling.</p>
+<p>Deep potential is essentially a combination of machine learning and physical principles, which start a new computing paradigm as shown in Figure 1.</p>
+<p>The image shows the new computing paradigm that combines molecular modeling, machine learning and high-performance computing to understand the interatomic forces of molecules compared to the traditional methods.</p>
+<p align="center">
+<img src="https://developer-blogs.nvidia.com/wp-content/uploads/2021/10/Deep-Potential-Fig-2.png"> <br>
+<em>Figure 1. A new computing paradigm composed of molecular modeling, AI, and HPC. (Figure courtesy: Dr. Linfeng Zhang, DP Technology)</em> </p>
+
+<p>The entire workflow is shown in Figure 2. The data generation step is done with VASP and QE. The data preparation, model training, testing, and compression steps are done using DeePMD-kit. The model deployment is in LAMMPS.</p>
+<p>This figure displays the workflow of training and deploying a deep potential model. The workflow includes data generation, data preparation, model training, model testing, model compression, and model deployment.</p>
+<p align="center">
+<img src="https://developer-blogs.nvidia.com/wp-content/uploads/2021/11/Deep-Potential-NGC-Fig2.png" > <br>
+<em>Figure 2. Diagram of the DeePMD workflow.</em> </p>
+
+<h2 id="why-containers">Why Containers?<a class="headerlink" href="#why-containers" title="Permanent link">&para;</a></h2>
+<p>A container is a portable unit of software that combines the application, and all its dependencies, into a single package that is agnostic to the underlying host OS.</p>
+<p>The workflow in this post involves AIMD, DP training, and LAMMPS MD simulation. It is nontrivial and time-consuming to install each software package from source with the correct setup of the compiler, MPI, GPU library, and optimization flags.</p>
+<p>Containers solve this problem by providing a highly optimized GPU-enabled computing environment for each step, and eliminates the time to install and test software.</p>
+<p>The NGC catalog, a hub of GPU-optimized HPC and AI software, carries a whole of HPC and AI containers that can be readily deployed on any GPU system. The HPC and AI containers from the NGC catalog are updated frequently and are tested for reliability and performance — necessary to speed up the time to solution.</p>
+<p>These containers are also scanned for Common Vulnerabilities and Exposure (CVEs), ensuring that they are devoid of any open ports and malware. Additionally, the HPC containers support both Docker and Singularity runtimes, and can be deployed on multi-GPU and multinode systems running in the cloud or on-premises.</p>
+<h2 id="training-data-generation">Training data generation<a class="headerlink" href="#training-data-generation" title="Permanent link">&para;</a></h2>
+<p>The first step in the simulation is data generation. We will show you how you can use VASP and Quantum ESPRESSO to run AIMD simulations and generate training datasets for DeePMD. All input files can be downloaded from the GitHub repository using the following command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/deepmodeling/SC21_DP_Tutorial.git
+</code></pre></div>
+<h2 id="vasp">VASP<a class="headerlink" href="#vasp" title="Permanent link">&para;</a></h2>
+<p>A two-dimensional graphene system with 98-atoms is used as shown in Figure 3.6 To generate the training datasets, 0.5ps NVT AIMD simulation at 300 K is performed. The time step chosen is 0.5fs. The DP model is created using 1000 time steps from a 0.5ps MD trajectory at a fixed temperature.</p>
+<p>Due to the short simulation time, the training dataset contains consecutive system snapshots, which are highly correlated. Generally, the training dataset should be sampled from uncorrelated snapshots with various system conditions and configurations. For this example, we used a simplified training data scheme. For production DP training, using DP-GEN is recommended to utilize the concurrent learning scheme to efficiently explore more combinations of conditions.7</p>
+<p>The projector-augmented wave pseudopotentials are employed to describe the interactions between the valence electrons and frozen cores. The generalized gradient approximation exchange−correlation functional of Perdew−Burke−Ernzerhof. Only the Γ-point was used for k-space sampling in all systems.</p>
+<p>This figure displays the top view of a single layer graphene system with 98 carbon atoms.</p>
+<p align="center">
+<img src="https://developer-blogs.nvidia.com/wp-content/uploads/2021/10/Deep-Potential-Fig-3-1.png" > <br>
+<em>Figure 3. A graphene system composed of 98 carbon atoms is used in AIMD simulation.</em> </p>
+
+<h2 id="quantum-espresso">Quantum Espresso<a class="headerlink" href="#quantum-espresso" title="Permanent link">&para;</a></h2>
+<p>The AIMD simulation can also be carried out using Quantum ESPRESSO, available as a container from the NGC Catalog. Quantum ESPRESSO is an integrated suite of open-source computer codes for electronic-structure calculations and materials modeling at the nanoscale based on density-functional theory, plane waves, and pseudopotentials. The same graphene structure is used in the QE calculations. The following command can be used to start the AIMD simulation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--nv<span class="w"> </span>docker://nvcr.io/hpc/quantum_espresso:qe-6.8<span class="w"> </span>cp.x
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&lt;<span class="w"> </span>c.md98.cp.in
+</code></pre></div>
+<h2 id="training-data-preparation">Training data preparation<a class="headerlink" href="#training-data-preparation" title="Permanent link">&para;</a></h2>
+<p>Once the training data is obtained from AIMD simulation, we want to convert its format using dpdata so that it can be used as input to the deep neural network. The dpdata package is a format conversion toolkit between AIMD, classical MD, and DeePMD-kit.</p>
+<p>You can use the convenient tool dpdata to convert data directly from the output of first-principles packages to the DeePMD-kit format. For deep potential training, the following information of a physical system has to be provided: atom type, box boundary, coordinate, force, viral, and system energy.</p>
+<p>A snapshot, or a frame of the system, contains all these data points for all atoms at one-time step, which can be stored in two formats, that is raw and npy.</p>
+<p>The first format raw is plain text with all information in one file, and each line of the file represents a snapshot. Different system information is stored in different files named as box.raw, coord.raw, force.raw, energy.raw, and virial.raw. We recommended you follow these naming conventions when preparing the training files.</p>
+<p>An example of force.raw:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>cat<span class="w"> </span>force.raw
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>-0.724<span class="w">  </span><span class="m">2</span>.039<span class="w"> </span>-0.951<span class="w">  </span><span class="m">0</span>.841<span class="w"> </span>-0.464<span class="w">  </span><span class="m">0</span>.363
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w"> </span><span class="m">6</span>.737<span class="w">  </span><span class="m">1</span>.554<span class="w"> </span>-5.587<span class="w"> </span>-2.803<span class="w">  </span><span class="m">0</span>.062<span class="w">  </span><span class="m">2</span>.222
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>-1.968<span class="w"> </span>-0.163<span class="w">  </span><span class="m">1</span>.020<span class="w"> </span>-0.225<span class="w"> </span>-0.789<span class="w">  </span><span class="m">0</span>.343
+</code></pre></div>
+<p>This force.raw contains three frames, with each frame having the forces of two atoms, resulting in three lines and six columns. Each line provides all three force components of two atoms in one frame. The first three numbers are the three force components of the first atom, while the next three numbers are the force components of the second atom.</p>
+<p>The coordinate file coord.raw is organized similarly. In box.raw, the nine components of the box vectors should be provided on each line. In virial.raw, the nine components of the virial tensor should be provided on each line in the order XX XY XZ YX YY YZ ZX ZY ZZ. The number of lines of all raw files should be identical. We assume that the atom types do not change in all frames. It is provided by type.raw, which has one line with the types of atoms written one by one.</p>
+<p>The atom types should be integers. For example, the type.raw of a system that has two atoms with zero and one:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>cat<span class="w"> </span>type.raw
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="m">0</span><span class="w"> </span><span class="m">1</span>
+</code></pre></div>
+<p>It is not a requirement to convert the data format to raw, but this process should give a sense on the types of data that can be used as inputs to DeePMD-kit for training.</p>
+<p>The easiest way to convert the first-principles results to the training data is to save them as numpy binary data.</p>
+<p>For VASP output, we have prepared an outcartodata.py script to process the VASP OUTCAR file. By running the commands:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>SC21_DP_Tutorial/AIMD/VASP/
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--nv<span class="w"> </span>docker://nvcr.io/hpc/deepmd-kit:v2.0.3<span class="w"> </span>python<span class="w"> </span>outcartodata.py
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>$<span class="w"> </span>mv<span class="w"> </span>deepmd_data<span class="w"> </span>../../DP/
+</code></pre></div>
+<p>For QE output:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>SC21_DP_Tutorial/AIMD/QE/
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$<span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--nv<span class="w"> </span>docker://nvcr.io/hpc/deepmd-kit:v2.0.3<span class="w"> </span>python<span class="w"> </span>logtodata.py
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>$<span class="w"> </span>mv<span class="w"> </span>deepmd_data<span class="w"> </span>../../DP/
+</code></pre></div>
+<p>A folder called deepmd_data is generated and moved to the training directory. It generates five sets 0/set.000, 1/set.000, 2/set.000, 3/set.000, 4/set.000, with each set containing 200 frames. It is not required to take care of the binary data files in each of the set.* directories. The path containing the set.* folder and type.raw file is called a system. If you want to train a nonperiodic system, an empty nopbc file should be placed under the system directory. box.raw is not necessary as it is a nonperiodic system.</p>
+<p>We are going to use three of the five sets for training, one for validating, and the remaining one for testing.</p>
+<h2 id="deep-potential-model-training">Deep Potential model training<a class="headerlink" href="#deep-potential-model-training" title="Permanent link">&para;</a></h2>
+<p>The input of the deep potential model is a descriptor vector containing the system information mentioned previously. The neural network contains several hidden layers with a composition of linear and nonlinear transformations. In this post, a three layer-neural network with 25, 50 and 100 neurons in each layer is used. The target value, or the label, for the neural network to learn is the atomic energies. The training process optimizes the weights and the bias vectors by minimizing the loss function.</p>
+<p>The training is initiated by the command where input.json contains the training parameters:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--nv<span class="w"> </span>docker://nvcr.io/hpc/deepmd-kit:v2.0.3<span class="w"> </span>dp<span class="w"> </span>train<span class="w"> </span>input.json
+</code></pre></div>
+<p>The DeePMD-kit prints detailed information on the training and validation data sets. The data sets are determined by training_data and validation_data as defined in the training section of the input script. The training dataset is composed of three data systems, while the validation data set is composed of one data system. The number of atoms, batch size, number of batches in the system, and the probability of using the system are all shown in Figure 4. The last column presents if the periodic boundary condition is assumed for the system.</p>
+<p>This image is a screenshot of the DP training output. Summaries of the training and validation dataset are shown with detailed information on the number of atoms, batch size, number of batches in the system and the probability of using the system.</p>
+<p align="center">
+<img src="https://developer-blogs.nvidia.com/wp-content/uploads/2021/11/DeePMD-Fig-3.jpg" > <br>
+<em>Figure 4. Screenshot of the DP training output.</em> </p>
+
+<p>During the training, the error of the model is tested every disp_freq training step with the batch used to train the model and with numb_btch batches from the validating data. The training error and validation error are printed correspondingly in the file disp_file (default is lcurve.out). The batch size can be set in the input script by the key batch_size in the corresponding sections for training and validation data set.</p>
+<p>An example of the output:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">#  step      rmse_val    rmse_trn    rmse_e_val  rmse_e_trn    rmse_f_val  rmse_f_trn         lr</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">      </span><span class="m">0</span><span class="w">      </span><span class="m">3</span>.33e+01<span class="w">    </span><span class="m">3</span>.41e+01<span class="w">      </span><span class="m">1</span>.03e+01<span class="w">    </span><span class="m">1</span>.03e+01<span class="w">      </span><span class="m">8</span>.39e-01<span class="w">    </span><span class="m">8</span>.72e-01<span class="w">    </span><span class="m">1</span>.0e-03
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="m">100</span><span class="w">      </span><span class="m">2</span>.57e+01<span class="w">    </span><span class="m">2</span>.56e+01<span class="w">      </span><span class="m">1</span>.87e+00<span class="w">    </span><span class="m">1</span>.88e+00<span class="w">      </span><span class="m">8</span>.03e-01<span class="w">    </span><span class="m">8</span>.02e-01<span class="w">    </span><span class="m">1</span>.0e-03
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="m">200</span><span class="w">      </span><span class="m">2</span>.45e+01<span class="w">    </span><span class="m">2</span>.56e+01<span class="w">      </span><span class="m">2</span>.26e-01<span class="w">    </span><span class="m">2</span>.21e-01<span class="w">      </span><span class="m">7</span>.73e-01<span class="w">    </span><span class="m">8</span>.10e-01<span class="w">    </span><span class="m">1</span>.0e-03
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="m">300</span><span class="w">      </span><span class="m">1</span>.62e+01<span class="w">    </span><span class="m">1</span>.66e+01<span class="w">      </span><span class="m">5</span>.01e-02<span class="w">    </span><span class="m">4</span>.46e-02<span class="w">      </span><span class="m">5</span>.11e-01<span class="w">    </span><span class="m">5</span>.26e-01<span class="w">    </span><span class="m">1</span>.0e-03
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="m">400</span><span class="w">      </span><span class="m">1</span>.36e+01<span class="w">    </span><span class="m">1</span>.32e+01<span class="w">      </span><span class="m">1</span>.07e-02<span class="w">    </span><span class="m">2</span>.07e-03<span class="w">      </span><span class="m">4</span>.29e-01<span class="w">    </span><span class="m">4</span>.19e-01<span class="w">    </span><span class="m">1</span>.0e-03
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="m">500</span><span class="w">      </span><span class="m">1</span>.07e+01<span class="w">    </span><span class="m">1</span>.05e+01<span class="w">      </span><span class="m">2</span>.45e-03<span class="w">    </span><span class="m">4</span>.11e-03<span class="w">      </span><span class="m">3</span>.38e-01<span class="w">    </span><span class="m">3</span>.31e-01<span class="w">    </span><span class="m">1</span>.0e-03
+</code></pre></div>
+<p>The training error reduces monotonically with training steps as shown in Figure 5. The trained model is tested on the test dataset and compared with the AIMD simulation results. The test command is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--nv<span class="w"> </span>docker://nvcr.io/hpc/deepmd-kit:v2.0.3<span class="w"> </span>dp<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-m<span class="w"> </span>frozen_model.pb<span class="w"> </span>-s<span class="w"> </span>deepmd_data/4/<span class="w"> </span>-n<span class="w"> </span><span class="m">200</span><span class="w"> </span>-d<span class="w"> </span>detail.out
+</code></pre></div>
+<p>This image shows the total training loss, energy loss, force loss and learning rate decay with training steps from 0 to 1,000,000. Both the training and validation loss decrease monotonically with training steps.</p>
+<p align="center">
+<img src="https://developer-blogs.nvidia.com/wp-content/uploads/2021/10/Deep-Potential-Fig-4-1.png" > <br>
+<em>Figure 5. Training loss with steps</em> </p>
+
+<p>The results are shown in Figure 6.</p>
+<p>This image displays the inferenced energy and force in the y-axis, and the ground true on the x-axis. The inferenced values soundly coincide with the ground truth with all data distributed in the diagonal direction.</p>
+<p align="center">
+<img src="https://developer-blogs.nvidia.com/wp-content/uploads/2021/11/DeePMD-Fig-4.jpg.png" > <br>
+<em>Figure 6. Test of the prediction accuracy of trained DP model with AIMD energies and forces.</em> </p>
+
+<h2 id="model-export-and-compression">Model export and compression<a class="headerlink" href="#model-export-and-compression" title="Permanent link">&para;</a></h2>
+<p>After the model has been trained, a frozen model is generated for inference in MD simulation. The process of saving neural network from a checkpoint is called “freezing” a model:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--nv<span class="w"> </span>docker://nvcr.io/hpc/deepmd-kit:v2.0.3<span class="w"> </span>dp<span class="w"> </span>freeze<span class="w"> </span>-o<span class="w"> </span>graphene.pb
+</code></pre></div>
+<p>After the frozen model is generated, the model can be compressed without sacrificing its accuracy; while greatly speeding up the inference performance in MD. Depending on simulation and training setup, model compression can boost performance by 10X, and reduce memory consumption by 20X when running on GPUs.</p>
+<p>The frozen model can be compressed using the following command where -i refers to the frozen model and -o points to the output name of the compressed model:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--nv<span class="w"> </span>docker://nvcr.io/hpc/deepmd-kit:v2.0.3<span class="w"> </span>dp<span class="w"> </span>compress<span class="w"> </span>-i<span class="w"> </span>graphene.pb<span class="w"> </span>-o<span class="w"> </span>graphene-compress.pb
+</code></pre></div>
+<h2 id="model-deployment-in-lammps">Model deployment in LAMMPS<a class="headerlink" href="#model-deployment-in-lammps" title="Permanent link">&para;</a></h2>
+<p>A new pair-style has been implemented in LAMMPS to deploy the trained neural network in prior steps. For users familiar with the LAMMPS workflow, only minimal changes are needed to switch to deep potential. For instance, a traditional LAMMPS input with Tersoff potential has the following setting for potential setup:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>pair_style<span class="w">      </span>tersoff
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>pair_coeff<span class="w">      </span>*<span class="w"> </span>*<span class="w"> </span>BNC.tersoff<span class="w"> </span>C
+</code></pre></div>
+<p>To use deep potential, replace previous lines with:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>pair_style<span class="w">      </span>deepmd<span class="w"> </span>graphene-compress.pb
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>pair_coeff<span class="w">      </span>*<span class="w"> </span>*
+</code></pre></div>
+<p>The pair_style command in the input file uses the DeePMD model to describe the atomic interactions in the graphene system.</p>
+<p>The graphene-compress.pb file represents the frozen and compressed model for inference.
+The graphene system in MD simulation contains 1,560 atoms.
+Periodic boundary conditions are applied in the lateral x– and y-directions, and free boundary is applied to the z-direction.
+The time step is set as 1 fs.
+The system is placed under NVT ensemble at temperature 300 K for relaxation, which is consistent with the AIMD setup.
+The system configuration after NVT relaxation is shown in Figure 7. It can be observed that the deep potential can describe the atomic structures with small ripples in the cross-plane direction. After 10ps NVT relaxation, the system is placed under NVE ensemble to check system stability.</p>
+<p>The image displays the side view of the single layer graphene system after thermal relaxation in LAMMPS.</p>
+<p align="center">
+<img src="https://developer-blogs.nvidia.com/wp-content/uploads/2021/10/Deep-Potential-Fig-7-1.png" > <br>
+<em>Figure 7.  Atomic configuration of the graphene system after relaxation with deep potential.</em> </p>
+
+<p>The system temperature is shown in Figure 8.</p>
+<p>The image displays the temperature profiles of the graphene system under NVT and NVE ensembles from 0 to 20 picoseconds. The first 10 picosecond is NVT and the second 10 picosecond is NVE.</p>
+<p align="center">
+<img src="https://developer-blogs.nvidia.com/wp-content/uploads/2021/10/Deep-Potential-Fig-8-1.png" > <br>
+<em>Figure 8. System temperature under NVT and NVE ensembles. The MD system driven by deep potential is very stable after relaxation.</em> </p>
+
+<p>To validate the accuracy of the trained DP model, the calculated radial distribution function (RDF) from AIMD, DP and Tersoff, are plotted in Figure 9. The DP model-generated RDF is very close to that of AIMD, which indicates that the crystalline structure of graphene can be well presented by the DP model.</p>
+<p>This image displays the plotted radial distribution function from three different methods, including DP, Tersoff and AIMD, which are denoted in black, red and blue solid lines respectively.</p>
+<p align="center">
+<img src="https://developer-blogs.nvidia.com/wp-content/uploads/2021/11/DeePMD-Fig-8.jpg.png" > <br>
+<em>Figure 9. Radial distribution function calculated by AIMD, DP and Tersoff potential, respectively. It can be observed that the RDF calculated by DP is very close to that of AIMD.</em> </p>
+
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>This post demonstrates a simple case study of graphene under given conditions. The DeePMD-kit package streamlines the workflow from AIMD to classical MD with deep potential, providing the following key advantages:</p>
+<p>Highly automatic and efficient workflow implemented in the TensorFlow framework.
+APIs with popular DFT and MD packages such as VASP, QE, and LAMMPS.
+Broad applications in organic molecules, metals, semiconductors, insulators, and more.
+Highly efficient code for HPC with MPI and GPU support.
+Modularization for easy adoption by other deep learning potential models.
+Furthermore, the use of GPU-optimized containers from the NGC catalog simplifies and accelerates the overall workflow by eliminating the steps to install and configure software. To train a comprehensive model for other applications, download the DeepMD Kit Container from the NGC catalog.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p>[1] Jia W, Wang H, Chen M, Lu D, Lin L, Car R, E W and Zhang L 2020 Pushing the limit of molecular dynamics with ab initio accuracy to 100 million atoms with machine learning IEEE Press 5 1-14</p>
+<p>[2] Wang H, Zhang L, Han J and E W 2018 DeePMD-kit: A deep learning package for many-body potential energy representation and molecular dynamics Computer Physics Communications 228 178-84</p>
+<p>[3] Plimpton S 1995 Fast Parallel Algorithms for Short-Range Molecular Dynamics Journal of Computational Physics 117 1-19</p>
+<p>[4] Kresse G and Hafner J 1993 Ab initio molecular dynamics for liquid metals Physical Review B 47 558-61</p>
+<p>[5] Giannozzi P, Baroni S, Bonini N, Calandra M, Car R, Cavazzoni C, Ceresoli D, Chiarotti G L, Cococcioni M, Dabo I, Dal Corso A, de Gironcoli S, Fabris S, Fratesi G, Gebauer R, Gerstmann U, Gougoussis C, Kokalj A, Lazzeri M, Martin-Samos L, Marzari N, Mauri F, Mazzarello R, Paolini S, Pasquarello A, Paulatto L, Sbraccia C, Scandolo S, Sclauzero G, Seitsonen A P, Smogunov A, Umari P and Wentzcovitch R M 2009 QUANTUM ESPRESSO: a modular and open-source software project for quantum simulations of materials Journal of Physics: Condensed Matter 21 395502</p>
+<p>[6] Humphrey W, Dalke A and Schulten K 1996 VMD: Visual molecular dynamics Journal of Molecular Graphics 14 33-8</p>
+<p>[7] Yuzhi Zhang, Haidi Wang, Weijie Chen, Jinzhe Zeng, Linfeng Zhang, Han Wang, and Weinan E, DP-GEN: A concurrent learning platform for the generation of reliable deep learning based potential energy models, Computer Physics Communications, 2020, 107206.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+        
+          
+          <a href="../../../../2024/01/25/bibtex_generator/" class="md-footer__link md-footer__link--next" aria-label="Next: BibTeX generator">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                BibTeX generator
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 <a href="https://thangckt.github.io">thangckt</a>
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.expand", "navigation.indexes", "navigation.tracking", "navigation.top", "search.suggest", "toc.follow", "navigation.tabs", "navigation.tabs.sticky", "navigation.tabs.header", "content.action.edit", "navigation.footer"], "search": "../../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.9b94f2f7.min.js"></script>
+      
+        <script src="../../../../../_extra_theme/extra_js/gg_adsense.js"></script>
+      
+    
+  </body>
+</html>

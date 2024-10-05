@@ -2,270 +2,270 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://thangckt.github.io/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/codedocs/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/contact/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cv/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/pubs/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/research/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/soft/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/tv/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/blog/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/blog/2022/11/30/Deep-Potential/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/blog/2024/09/25/best-of-atomistic-machine-learning/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/blog/2024/09/28/best-of-python-developer-tools/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/blog/2024/09/30/best-of-python/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/blog/2024/01/25/bibtex_generator/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/BLACS/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/CMake/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/CP2K/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/Dependencies/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/FFTW/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/GCC/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/LAMMPS/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/LLVM/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/Libtool/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/OpenBLAS/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/OpenMPI_4/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/OpenMPI_5/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/OpenMPI_conda/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/OpenMPI_windows/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/PMIX/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/Plumed/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/UCX_UCC/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/binutils_linker/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/compile/scaLAPACK_BLACS/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/refPage/cheatsheet/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/cluster/refPage/docs_syntax/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/odd/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/odd/music/Lyrics/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/odd/music/music_classic/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/odd/music/music_foreigned/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/odd/music/music_guitar_cover/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/odd/music/music_saigon_fall/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/odd/music/music_sleep/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/odd/music/music_tinh_ca/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/odd/music/music_viet_su/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/odd/reading/read_list/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/ref/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/ref/chat/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/ref/english/english_learn/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/ref/english/vocabulary_img/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/ref/raw_md/ml_in_comp_mat/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/ref/reading/2_Mech_Terminologies/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/ref/reading/6_Tracking/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/ref/reading/basic_science/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/ref/reading/computational/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/ref/reading/mechanic_solid/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/ref/video/1_research_ethic/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/ref/video/2_calculus_essence/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/research/publication/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/research/publication_nofig/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/blog/archive/2024/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/blog/archive/2022/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/blog/category/python/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/blog/category/science/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/blog/category/ml/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
     <url>
          <loc>https://thangckt.github.io/blog/category/latex/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-05</lastmod>
     </url>
 </urlset>

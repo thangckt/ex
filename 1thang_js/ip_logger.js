@@ -5,7 +5,7 @@
 // ref: Using Google App Mail: https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server
 
 
-const URL = 'https://script.google.com/macros/s/AKfycbxw0DuxSyvZtUyVPAWECx15gxibYpqgevMV0L0YmIKOkkNNyLBe6bsrDLrRhzQRwlrB/exec'; // AppScriptURL
+const URL = 'https://script.google.com/macros/s/AKfycbx4zkochU3fvZELu4J3Mfhv1gZBi7Md2LKxvMoq2iBKO2ELTRjHeOLP2S8AVFWhIt4/exec'; // AppScriptURL
 
 
 // Async function to send JSON data to Google Sheets via Google Apps Script
@@ -15,7 +15,6 @@ async function sendDataToGoogleSheet(jsonData) {
             method: 'POST',
             body: JSON.stringify(jsonData),
             headers: { 'Content-Type': 'application/json' },
-            mode: 'no-cors'  // This disables CORS restrictions
         });
 
         if (!response.ok) {

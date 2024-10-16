@@ -81,7 +81,7 @@ function getBrowserInfo() {
 
 // Log visitor information and send to Google Sheet
 async function logVisitor(isClosing = false) {
-    const timestamp = new Date().toUTCString();
+    const timestamp = new Date().toLocaleString("en-US", { timeZone: "Asia/Seoul" });
     const browserInfo = getBrowserInfo();
     const visitorInfo = await getVisitorInfo();
 
@@ -107,8 +107,13 @@ async function logVisitor(isClosing = false) {
             finalUrl: finalUrl
         };
 
+        console.log("Logging Visitor Info:", jsonData); // Debugging line
         // Send the collected data to Google Sheet
-        await sendDataToGoogleSheet(jsonData);
+        try {
+            await sendDataToGoogleSheet(jsonData);
+        } catch (error) {
+            console.error('Error sending data to Google Sheet:', error);
+        }
     } else {
         console.error('Visitor information could not be retrieved.');
     }

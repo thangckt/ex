@@ -2,7 +2,7 @@
 // Thang modifications:
 // - With the help from GPT
 // - Change from using `sendToDiscord` to `sendDataToGoogleSheet`
-
+// ref: Using Google App Mail: https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server
 
 
 const URL = 'https://script.google.com/macros/s/AKfycby9h0uGt8GR2OWOwX8j3HCevnMJwFX0J3WMOAl8DGQW65TIYRGS8FQc7DaiNmq37R5m/exec'; // AppScriptURL
@@ -14,9 +14,7 @@ async function sendDataToGoogleSheet(jsonData) {
         const response = await fetch(URL, {
             method: 'POST',
             body: JSON.stringify(jsonData),
-            headers: {
-                "Content-Type", "application/x-www-form-urlencoded"
-            }
+            headers: { "Content-Type": "application/x-www-form-urlencoded" }
         });
 
         if (!response.ok) {

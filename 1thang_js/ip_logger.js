@@ -11,10 +11,11 @@ const URL = 'https://script.google.com/macros/s/AKfycbx4zkochU3fvZELu4J3Mfhv1gZB
 // Async function to send JSON data to Google Sheets via Google Apps Script
 function sendDataToGoogleSheet(jsonData) {
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', URL, true); // URL should be defined as your Google Apps Script URL
+    xhr.open('POST', URL); // URL should be defined as your Google Apps Script URL
 
     // Set the request headers
     xhr.setRequestHeader('Content-Type', "application/x-www-form-urlencoded");
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
 
     // Set up the callback for when the request completes
     xhr.onreadystatechange = function () {

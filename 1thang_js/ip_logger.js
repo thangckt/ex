@@ -15,6 +15,7 @@ function sendDataToGoogleSheet(jsonData) {
 
     // Set the request headers
     xhr.setRequestHeader('Content-Type', "application/x-www-form-urlencoded");
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
 
     // Set up the callback for when the request completes
     xhr.onreadystatechange = function () {

@@ -15,7 +15,7 @@ async function sendDataToGoogleSheet(jsonData) {
             method: 'POST',
             body: JSON.stringify(jsonData),
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type", "application/x-www-form-urlencoded"
             }
         });
 

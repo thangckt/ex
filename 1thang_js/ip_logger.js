@@ -14,7 +14,8 @@ async function sendDataToGoogleSheet(jsonData) {
         const response = await fetch(URL, {
             method: 'POST',
             body: JSON.stringify(jsonData),
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json' },
+            mode: 'no-cors'  // This disables CORS restrictions
         });
 
         if (!response.ok) {

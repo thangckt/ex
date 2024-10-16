@@ -5,10 +5,10 @@
 // ref: Using Google App Mail: https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server
 
 
-const URL = 'https://script.google.com/macros/s/AKfycby9h0uGt8GR2OWOwX8j3HCevnMJwFX0J3WMOAl8DGQW65TIYRGS8FQc7DaiNmq37R5m/exec'; // AppScriptURL
+const URL = 'https://script.google.com/macros/s/AKfycbxw0DuxSyvZtUyVPAWECx15gxibYpqgevMV0L0YmIKOkkNNyLBe6bsrDLrRhzQRwlrB/exec'; // AppScriptURL
 
 
-
+// Async function to send JSON data to Google Sheets via Google Apps Script
 async function sendDataToGoogleSheet(jsonData) {
     try {
         const response = await fetch(URL, {
@@ -18,22 +18,24 @@ async function sendDataToGoogleSheet(jsonData) {
         });
 
         if (!response.ok) {
-            throw new Error(`Error: ${response.statusText}`);
+            throw new Error(`Failed to send data: ${response.statusText}`);
         }
 
         const result = await response.text();
-        console.log('Success:', result);
+        console.log('Data successfully sent:', result);
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Error sending data to Google Sheet:', error);
     }
 }
 
 
+// Fetch visitor info using ipapi.co API
 async function getVisitorInfo() {
     try {
         const response = await fetch('https://ipapi.co/json/');
-        const data = await response.json();
-        return data;
+        if (!response.ok) throw new Error(`Error fetching visitor info: ${response.statusText}`);
+
+        return await response.json();
     } catch (error) {
         console.error('Error retrieving visitor information:', error);
         return null;
@@ -41,46 +43,62 @@ async function getVisitorInfo() {
 }
 
 
+// Get browser information from user agent string
 function getBrowserInfo() {
     const ua = navigator.userAgent;
-    let tem,
-        M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-    if (/trident/i.test(M[1])) {
-        tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
-        return { name: 'IE', version: tem[1] || '' };
+    const browserData = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+    const browserInfo = { name: 'Unknown', version: 'Unknown' };
+
+    if (/trident/i.test(browserData[1])) {
+        const version = /\brv[ :]+(\d+)/g.exec(ua) || [];
+        browserInfo.name = 'IE';
+        browserInfo.version = version[1] || '';
+    } else if (browserData[1] === 'Chrome') {
+        const temp = ua.match(/\b(OPR|Edg)\/(\d+)/);
+        if (temp) {
+            browserInfo.name = temp[1] === 'OPR' ? 'Opera' : 'Edge';
+            browserInfo.version = temp[2];
+        } else {
+            browserInfo.name = 'Chrome';
+            browserInfo.version = browserData[2];
+        }
+    } else if (browserData[1]) {
+        browserInfo.name = browserData[1];
+        browserInfo.version = browserData[2];
     }
-    if (M[1] === 'Chrome') {
-        tem = ua.match(/\b(OPR|Edge?)\/(\d+)/);
-        if (tem != null) return { name: tem[1].replace('OPR', 'Opera'), version: tem[2] };
-    }
-    M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
-    if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
-    return { name: M[0], version: M[1] };
+
+    return browserInfo;
 }
 
 
+// Log visitor information and send to Google Sheet
 async function logVisitor() {
     const timestamp = new Date().toISOString();
     const browserInfo = getBrowserInfo();
     const visitorInfo = await getVisitorInfo();
 
     if (visitorInfo) {
-        const jsonData = {};
-        jsonData['timestamp'] = timestamp;
-        jsonData['ip'] = visitorInfo.ip;
-        jsonData['org'] = visitorInfo.org;
-        jsonData['city'] = visitorInfo.city;
-        jsonData['region'] = visitorInfo.region;
-        jsonData['country'] = visitorInfo.country_name;
-        jsonData['postal'] = visitorInfo.postal;
-        jsonData['latitude'] = visitorInfo.latitude;
-        jsonData['longitude'] = visitorInfo.longitude;
-        jsonData['asn'] = visitorInfo.asn;
-        jsonData['browser'] = `${browserInfo.name} ${browserInfo.version}`;
-        jsonData['os'] = navigator.platform;
+        const jsonData = {
+            timestamp: timestamp,
+            ip: visitorInfo.ip,
+            org: visitorInfo.org,
+            city: visitorInfo.city,
+            region: visitorInfo.region,
+            country: visitorInfo.country_name,
+            postal: visitorInfo.postal,
+            latitude: visitorInfo.latitude,
+            longitude: visitorInfo.longitude,
+            asn: visitorInfo.asn,
+            browser: `${browserInfo.name} ${browserInfo.version}`,
+            os: navigator.platform
+        };
 
-        sendDataToGoogleSheet(jsonData);
+        // Send the collected data to Google Sheet
+        await sendDataToGoogleSheet(jsonData);
+    } else {
+        console.error('Visitor information could not be retrieved.');
     }
 }
 
+// Trigger logVisitor when the window loads
 window.onload = logVisitor;

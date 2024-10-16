@@ -14,8 +14,7 @@ function sendDataToGoogleSheet(jsonData) {
     xhr.open('POST', URL, true); // URL should be defined as your Google Apps Script URL
 
     // Set the request headers
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+    xhr.setRequestHeader('Content-Type', "application/x-www-form-urlencoded");
 
     // Set up the callback for when the request completes
     xhr.onreadystatechange = function () {

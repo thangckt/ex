@@ -15,6 +15,7 @@ async function sendDataToGoogleSheet(jsonData) {
             method: 'POST',
             body: JSON.stringify(jsonData),
             headers: { 'Content-Type': 'application/json' },
+            mode: 'cors' // Make sure CORS mode is enabled
         });
 
         if (!response.ok) {

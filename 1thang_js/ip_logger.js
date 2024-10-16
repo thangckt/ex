@@ -15,7 +15,6 @@ function sendDataToGoogleSheet(jsonData) {
 
     // Set the request headers
     xhr.setRequestHeader('Content-Type', "application/x-www-form-urlencoded");
-    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
 
     // Set up the callback for when the request completes
     xhr.onreadystatechange = function () {
@@ -82,7 +81,7 @@ function getBrowserInfo() {
 
 // Log visitor information and send to Google Sheet
 async function logVisitor() {
-    const timestamp = new Date().toISOString();
+    const timestamp = new Date().toUTCString();
     const browserInfo = getBrowserInfo();
     const visitorInfo = await getVisitorInfo();
 

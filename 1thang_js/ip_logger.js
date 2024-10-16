@@ -81,10 +81,14 @@ function getBrowserInfo() {
 
 
 // Log visitor information and send to Google Sheet
-async function logVisitor() {
+async function logVisitor(isClosing = false) {
     const timestamp = new Date().toUTCString();
     const browserInfo = getBrowserInfo();
     const visitorInfo = await getVisitorInfo();
+
+    // Track initial and final URLs
+    const initialUrl = sessionStorage.getItem('initialUrl') || window.location.href;
+    const finalUrl = window.location.href;
 
     if (visitorInfo) {
         const jsonData = {
@@ -99,7 +103,9 @@ async function logVisitor() {
             longitude: visitorInfo.longitude,
             asn: visitorInfo.asn,
             browser: `${browserInfo.name} ${browserInfo.version}`,
-            os: navigator.platform
+            os: navigator.platform,
+            initialUrl: initialUrl,
+            finalUrl: finalUrl
         };
 
         // Send the collected data to Google Sheet
@@ -107,7 +113,21 @@ async function logVisitor() {
     } else {
         console.error('Visitor information could not be retrieved.');
     }
+
+    // Clear the initial URL for future visits
+    if (isClosing) {
+        sessionStorage.removeItem('initialUrl');
+    }
 }
 
-// Trigger logVisitor when the window loads
-window.onload = logVisitor;
+// Store the initial URL when the page loads
+window.onload = function () {
+    // Store the initial URL in session storage
+    sessionStorage.setItem('initialUrl', window.location.href);
+    logVisitor();
+};
+
+// Trigger logVisitor on window close
+window.onbeforeunload = function () {
+    logVisitor(true); // Pass true to indicate closing event
+};

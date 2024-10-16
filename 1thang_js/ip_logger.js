@@ -1,29 +1,32 @@
 // Source: https://github.com/Matti-Krebelder/Website-IP-Logger
-// Thang tranlated from German to English
+// Thang modifications:
+// - With the help from GPT
+// - Change from using `sendToDiscord` to `sendDataToGoogleSheet`
 
-const webhookURL = 'Discord-Webhook-URL';
 
-async function sendToDiscord(message) {
-    const data = {
-        content: message
-    };
 
+const URL = 'https://script.google.com/macros/s/AKfycbwqN35erLzoMFzRcfNMAJOv0jtzeAiHRTbnu7egdoc/exec'; // AppScriptURL
+
+
+
+async function sendDataToGoogleSheet(jsonData) {
     try {
-        const response = await fetch(webhookURL, {
+        const response = await fetch(URL, {
             method: 'POST',
+            body: JSON.stringify(jsonData),
             headers: {
                 'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
+            }
         });
 
         if (!response.ok) {
-            throw new Error('Fehler beim Senden an Discord');
+            throw new Error(`Error: ${response.statusText}`);
         }
 
-        console.log('Daten erfolgreich an Discord gesendet');
+        const result = await response.text();
+        console.log('Success:', result);
     } catch (error) {
-        console.error('Fehler:', error);
+        console.error('Error:', error);
     }
 }
 
@@ -79,7 +82,12 @@ async function logVisitor() {
                     Operating system: ${navigator.platform}
                     User-Agent: ${navigator.userAgent}
                 `;
-        sendToDiscord(message);
+
+        const jsonData = {
+            content: message
+        };
+
+        sendDataToGoogleSheet(jsonData);
     }
 }
 

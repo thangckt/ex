@@ -14,7 +14,7 @@ async function sendDataToGoogleSheet(jsonData) {
         const response = await fetch(URL, {
             method: 'POST',
             body: JSON.stringify(jsonData),
-            headers: { "Content-Type": "application/x-www-form-urlencoded" }
+            headers: { 'Content-Type': 'application/json' }
         });
 
         if (!response.ok) {
@@ -60,30 +60,24 @@ function getBrowserInfo() {
 
 
 async function logVisitor() {
-    const visitorInfo = await getVisitorInfo();
     const timestamp = new Date().toISOString();
     const browserInfo = getBrowserInfo();
+    const visitorInfo = await getVisitorInfo();
 
     if (visitorInfo) {
-        const message = `
-                    New Visitor:
-                    IP-Adress: ${visitorInfo.ip}
-                    Timestramp: ${timestamp}
-                    City: ${visitorInfo.city}
-                    Region: ${visitorInfo.region}
-                    Country: ${visitorInfo.country_name}
-                    postal code: ${visitorInfo.postal}
-                    Latitude: ${visitorInfo.latitude}
-                    Longitude: ${visitorInfo.longitude}
-                    ISP: ${visitorInfo.org}
-                    Browser: ${browserInfo.name} ${browserInfo.version}
-                    Operating system: ${navigator.platform}
-                    User-Agent: ${navigator.userAgent}
-                `;
-
-        const jsonData = {
-            content: message
-        };
+        const jsonData = {};
+        jsonData['timestamp'] = timestamp;
+        jsonData['ip'] = visitorInfo.ip;
+        jsonData['org'] = visitorInfo.org;
+        jsonData['city'] = visitorInfo.city;
+        jsonData['region'] = visitorInfo.region;
+        jsonData['country'] = visitorInfo.country_name;
+        jsonData['postal'] = visitorInfo.postal;
+        jsonData['latitude'] = visitorInfo.latitude;
+        jsonData['longitude'] = visitorInfo.longitude;
+        jsonData['asn'] = visitorInfo.asn;
+        jsonData['browser'] = `${browserInfo.name} ${browserInfo.version}`;
+        jsonData['os'] = navigator.platform;
 
         sendDataToGoogleSheet(jsonData);
     }

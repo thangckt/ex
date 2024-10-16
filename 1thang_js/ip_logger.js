@@ -9,24 +9,32 @@ const URL = 'https://script.google.com/macros/s/AKfycbx4zkochU3fvZELu4J3Mfhv1gZB
 
 
 // Async function to send JSON data to Google Sheets via Google Apps Script
-async function sendDataToGoogleSheet(jsonData) {
-    try {
-        const response = await fetch(URL, {
-            method: 'POST',
-            body: JSON.stringify(jsonData),
-            headers: { 'Content-Type': 'application/json' },
-            mode: 'cors' // Make sure CORS mode is enabled
-        });
+function sendDataToGoogleSheet(jsonData) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', URL, true); // URL should be defined as your Google Apps Script URL
 
-        if (!response.ok) {
-            throw new Error(`Failed to send data: ${response.statusText}`);
+    // Set the request headers
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+
+    // Set up the callback for when the request completes
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log('Data successfully sent:', xhr.responseText);
+            } else {
+                console.error(`Failed to send data: ${xhr.status} ${xhr.statusText}`);
+            }
         }
+    };
 
-        const result = await response.text();
-        console.log('Data successfully sent:', result);
-    } catch (error) {
-        console.error('Error sending data to Google Sheet:', error);
-    }
+    // Handle network errors
+    xhr.onerror = function () {
+        console.error('Network error occurred while sending data to Google Sheet');
+    };
+
+    // Convert JSON data to string and send the request
+    xhr.send(JSON.stringify(jsonData));
 }
 
 

@@ -32,11 +32,8 @@ function sendDataToGoogleApp(jsonData) {
         console.error('Network error occurred while sending data to Google Sheet');
     };
 
-    // Convert JSON data to a URL-encoded string and send it
-    const encodedData = Object.keys(jsonData)
-        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(jsonData[key]))
-        .join('&');
-    xhr.send(encodedData);
+    // Convert JSON data to string and send the request
+    xhr.send(JSON.stringify(jsonData));
 }
 
 

@@ -31,11 +31,8 @@ function sendDataToGoogleApp(jsonData, appScriptURL, onSuccess, onError) {
         onError(); // Call onError callback in case of network errors
     };
 
-    // Convert JSON data to a URL-encoded string and send it
-    const encodedData = Object.keys(jsonData)
-        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(jsonData[key]))
-        .join('&');
-    xhr.send(encodedData);
+    // Convert JSON data to string and send the request
+    xhr.send(JSON.stringify(jsonData));
 }
 
 // Get all data from the form and return JSON-data

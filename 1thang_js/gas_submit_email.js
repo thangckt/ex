@@ -89,7 +89,6 @@ function handleFormSubmit(event) {
     // Call the sendDataToGoogleApp function and handle success and error
     sendDataToGoogleApp(formData, appScriptURL,
         () => { // onSuccess callback
-            form.reset(); // Reset the form fields
             if (sendingMessage) {
                 sendingMessage.style.display = "none"; // Hide the sending message
             }
@@ -97,6 +96,7 @@ function handleFormSubmit(event) {
             if (thankYouMessage) {
                 thankYouMessage.style.display = "block"; // Show thank you message
             }
+            form.reset(); // Reset the form fields
         },
         () => { // onError callback
             alert('There was an error submitting the form. Please try again.');

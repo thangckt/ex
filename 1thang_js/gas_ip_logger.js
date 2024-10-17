@@ -9,34 +9,50 @@ const appScriptURL = 'https://script.google.com/macros/s/AKfycbx4zkochU3fvZELu4J
 
 
 // Async function to send JSON data to Google Sheets via Google Apps Script
-function sendDataToGoogleApp(jsonData) {
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', appScriptURL, true); // URL should be defined as your Google Apps Script URL
+// function sendDataToGoogleApp(jsonData) {
+//     const xhr = new XMLHttpRequest();
+//     xhr.open('POST', appScriptURL, true); // URL should be defined as your Google Apps Script URL
+//     xhr.setRequestHeader('Content-Type', "application/x-www-form-urlencoded");
 
-    // Set the request headers
-    xhr.setRequestHeader('Content-Type', "application/x-www-form-urlencoded");
+//     // Set up the callback for when the request completes
+//     xhr.onreadystatechange = function () {
+//         if (xhr.readyState === XMLHttpRequest.DONE) {
+//             if (xhr.status === 200) {
+//                 console.log('Data successfully sent:', xhr.responseText);
+//             } else {
+//                 console.error(`Failed to send data: ${xhr.status} ${xhr.statusText}`);
+//             }
+//         }
+//     };
 
-    // Set up the callback for when the request completes
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                console.log('Data successfully sent:', xhr.responseText);
-            } else {
-                console.error(`Failed to send data: ${xhr.status} ${xhr.statusText}`);
-            }
+//     // Handle network errors
+//     xhr.onerror = function () {
+//         console.error('Network error occurred while sending data to Google Sheet');
+//     };
+
+//     // Convert JSON data to string and send the request
+//     xhr.send(JSON.stringify(jsonData));
+// }
+
+async function sendDataToGoogleApp(jsonData) {
+    try {
+        const response = await fetch(appScriptURL, {
+            method: 'POST', // Specify the method
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded' // Set the appropriate headers
+            },
+            body: JSON.stringify(jsonData) // Convert the JSON object to a string
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to send data: ${response.status} ${response.statusText}`);
         }
-    };
 
-    // Handle network errors
-    xhr.onerror = function () {
-        console.error('Network error occurred while sending data to Google Sheet');
-    };
-
-    // Convert JSON data to a URL-encoded string and send it
-    const encodedData = Object.keys(jsonData)
-        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(jsonData[key]))
-        .join('&');
-    xhr.send(encodedData);
+        const data = await response.text(); // Parse the response text
+        console.log('Data successfully sent:', data); // Log the response from the server
+    } catch (error) {
+        console.error('Network error occurred while sending data to Google Sheet:', error);
+    }
 }
 
 

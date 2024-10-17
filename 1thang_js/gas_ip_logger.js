@@ -127,8 +127,8 @@ async function logVisitor(isClosing = false) {
 }
 
 // Store the initial URL when the page loads
-window.onload = async function () {
-    await logVisitor();
+window.onload = function () {
+    logVisitor();
 };
 
 // // Trigger logVisitor on window close

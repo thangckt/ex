@@ -39,7 +39,7 @@ async function sendDataToGoogleApp(jsonData) {
         const response = await fetch(appScriptURL, {
             method: 'POST', // Specify the method
             headers: {
-                'Content-Type': 'application/json', // 'application/x-www-form-urlencoded'
+                'Content-Type': 'application/x-www-form-urlencoded',
                 'Access-Control-Allow-Origin': '*' // CORS header
             },
             body: JSON.stringify(jsonData) // Convert the JSON object to a string

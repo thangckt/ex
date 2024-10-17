@@ -1,17 +1,17 @@
 // Source: https://github.com/Matti-Krebelder/Website-IP-Logger
 // Thang modifications:
 // - With the help from GPT
-// - Change from using `sendToDiscord` to `sendDataToGoogleSheet`
+// - Change from using `sendToDiscord` to `sendDataToGoogleApp`
 // ref: Using Google App Mail: https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server
 
 
-const URL = 'https://script.google.com/macros/s/AKfycbx4zkochU3fvZELu4J3Mfhv1gZBi7Md2LKxvMoq2iBKO2ELTRjHeOLP2S8AVFWhIt4/exec'; // AppScriptURL
+const appScriptURL = 'https://script.google.com/macros/s/AKfycbx4zkochU3fvZELu4J3Mfhv1gZBi7Md2LKxvMoq2iBKO2ELTRjHeOLP2S8AVFWhIt4/exec';
 
 
 // Async function to send JSON data to Google Sheets via Google Apps Script
-function sendDataToGoogleSheet(jsonData) {
+function sendDataToGoogleApp(jsonData) {
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', URL, true); // URL should be defined as your Google Apps Script URL
+    xhr.open('POST', appScriptURL, true); // URL should be defined as your Google Apps Script URL
 
     // Set the request headers
     xhr.setRequestHeader('Content-Type', "application/x-www-form-urlencoded");
@@ -105,7 +105,7 @@ async function logVisitor(isClosing = false) {
 
         // Send the collected data to Google Sheet
         try {
-            await sendDataToGoogleSheet(jsonData);
+            await sendDataToGoogleApp(jsonData);
         } catch (error) {
             console.error('Error sending data to Google Sheet:', error);
         }

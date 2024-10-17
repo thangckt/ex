@@ -87,6 +87,10 @@
         posthog.init('phc_ntKnH0z7UzXKAPNn9V0igkr0yKqvI24IRitmTTTDBtJ',{api_host:'https://app.posthog.com'})
     </script>
 
+    <!-- Track visitor's IP -->
+    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script src="./1thang_js/ip_logger.js" crossorigin="anonymous"></script>
+
 
   </head>
   
@@ -2508,7 +2512,7 @@
 </style>
 
 <!-- Include the JavaScript file -->
-<script src="./1JavaScript/form_submission_handler.js"></script>
+<script src="./1thang_js/form_submission_handler.js"></script>
 
 <!-- HTML from here -->
 <div class="container">
@@ -2529,7 +2533,7 @@
         </div>
         <div>
             <label for="message">Message:</label><br>
-            <textarea id="message" name="message" required placeholder="Leave messages here..." oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'"></textarea><br>
+            <textarea id="message" name="message" required placeholder="Write messages here..." oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'"></textarea><br>
         </div>
         <div class="honeypot-field">
             <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>

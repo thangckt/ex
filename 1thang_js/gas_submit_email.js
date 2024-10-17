@@ -5,35 +5,21 @@
 const appScriptURL = "https://script.google.com/macros/s/AKfycbxmd9UxNXhJoBXFwksde4ip_G1YMofHVHOT4ZLOIpJ8mzYxneUa48sTK2X1GU6cnkfP/exec";
 
 // Async function to send JSON data to Google Sheets via Google Apps Script
-function sendDataToGoogleApp(jsonData, appScriptURL, onSuccess, onError) {
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', appScriptURL, true);
+async function sendDataToGoogleApp(jsonData) {
+    try {
+        const response = await fetch(appScriptURL, {
+            method: 'POST', // Specify the method
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: JSON.stringify(jsonData) // Convert the JSON object to a string
+        });
 
-    // Set the request headers
-    xhr.setRequestHeader('Content-Type', "application/x-www-form-urlencoded");
-
-    // Handle the response
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                console.log('Data successfully sent:', xhr.responseText);
-                onSuccess(); // Call onSuccess callback if the request was successful
-            } else {
-                console.error(`Failed to send data: ${xhr.status} ${xhr.statusText}`);
-                onError(); // Call onError callback if the request failed
-            }
-        }
-    };
-
-    // Handle network errors
-    xhr.onerror = function () {
-        console.error('Network error occurred while sending data to Google Sheet');
-        onError(); // Call onError callback in case of network errors
-    };
-
-    // Convert JSON data to string and send the request
-    xhr.send(JSON.stringify(jsonData));
+        const data = await response.text(); // Parse the response text
+        console.log('Data successfully sent:', data); // Log the response from the server
+    } catch (error) {
+        console.error('Network error occurred while sending data to Google Sheet:', error);
+    }
 }
+
 
 // Get all data from the form and return JSON-data
 function getFormData(form) {
@@ -57,8 +43,14 @@ function disableAllButtons(form) {
     buttons.forEach(button => button.disabled = true);
 }
 
+// Enable all buttons in the form (used for error handling)
+function enableAllButtons(form) {
+    const buttons = form.querySelectorAll("button, input[type='submit']");
+    buttons.forEach(button => button.disabled = false);
+}
+
 // Function to handle form submission
-function handleFormSubmit(event) {
+async function handleFormSubmit(event) {
     event.preventDefault(); // Prevent default form submission
 
     const form = event.target;
@@ -83,28 +75,38 @@ function handleFormSubmit(event) {
 
     disableAllButtons(form); // Disable all buttons in the form
 
-    // Call the sendDataToGoogleApp function and handle success and error
-    sendDataToGoogleApp(formData, appScriptURL,
-        () => { // onSuccess callback
-            if (sendingMessage) {
-                sendingMessage.style.display = "none"; // Hide the sending message
-            }
-            const thankYouMessage = form.querySelector(".thankyou_message");
-            if (thankYouMessage) {
-                thankYouMessage.style.display = "block"; // Show thank you message
-            }
-            form.reset(); // Reset the form fields
-        },
-        () => { // onError callback
-            alert('There was an error submitting the form. Please try again.');
-            if (formElements) {
-                formElements.style.display = "block"; // Show form elements again on error
-            }
-            if (sendingMessage) {
-                sendingMessage.style.display = "none"; // Hide sending message on error
-            }
+    try {
+        // Send the form data
+        await sendDataToGoogleApp(formData);
+
+        // Hide the sending message
+        if (sendingMessage) {
+            sendingMessage.style.display = "none";
         }
-    );
+
+        // Show the thank you message
+        const thankYouMessage = form.querySelector(".thankyou_message");
+        if (thankYouMessage) {
+            thankYouMessage.style.display = "block";
+        }
+
+        form.reset(); // Reset the form fields
+
+    } catch (error) {
+        alert('There was an error submitting the form. Please try again.');
+
+        // Show form elements again on error
+        if (formElements) {
+            formElements.style.display = "block";
+        }
+
+        // Hide sending message on error
+        if (sendingMessage) {
+            sendingMessage.style.display = "none";
+        }
+
+        enableAllButtons(form); // Enable buttons again on error
+    }
 }
 
 // Function to bind form submission event when the document is ready

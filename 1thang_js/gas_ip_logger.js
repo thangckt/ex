@@ -39,7 +39,8 @@ async function sendDataToGoogleApp(jsonData) {
         const response = await fetch(appScriptURL, {
             method: 'POST', // Specify the method
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded' // Set the appropriate headers
+                'Content-Type': 'application/json', // 'application/x-www-form-urlencoded'
+                'Access-Control-Allow-Origin': '*' // CORS header
             },
             body: JSON.stringify(jsonData) // Convert the JSON object to a string
         });
@@ -126,8 +127,8 @@ async function logVisitor(isClosing = false) {
 }
 
 // Store the initial URL when the page loads
-window.onload = function () {
-    logVisitor();
+window.onload = async function () {
+    await logVisitor();
 };
 
 // // Trigger logVisitor on window close

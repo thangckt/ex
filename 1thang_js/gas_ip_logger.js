@@ -32,8 +32,11 @@ function sendDataToGoogleApp(jsonData) {
         console.error('Network error occurred while sending data to Google Sheet');
     };
 
-    // Convert JSON data to string and send the request
-    xhr.send(JSON.stringify(jsonData));
+    // Convert JSON data to a URL-encoded string and send it
+    const encodedData = Object.keys(jsonData)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(jsonData[key]))
+        .join('&');
+    xhr.send(encodedData);
 }
 
 
@@ -102,13 +105,7 @@ async function logVisitor(isClosing = false) {
             os: navigator.platform,
             initialUrl: initialUrl,
         };
-
-        // Send the collected data to Google Sheet
-        try {
-            await sendDataToGoogleApp(jsonData);
-        } catch (error) {
-            console.error('Error sending data to Google Sheet:', error);
-        }
+        await sendDataToGoogleApp(jsonData);
     }
 }
 

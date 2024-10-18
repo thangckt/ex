@@ -90,9 +90,22 @@ function setupVisitorLogging() {
     // Log visitor info when the page is loaded
     logVisitor();
 
-    // Log visitor info when the URL changes (for Single Page Apps or in-page navigation)
-    window.addEventListener("popstate", logVisitor); // Handles back/forward navigation
-    window.addEventListener("hashchange", logVisitor); // Handles hash-based navigation
+    // Handle back/forward navigation (popstate) and hash changes (hashchange)
+    window.addEventListener("popstate", logVisitor); // Back/forward button navigation
+    window.addEventListener("hashchange", logVisitor); // Hash-based URL changes
+
+    // MutationObserver to detect DOM changes in case of client-side routing in SPAs
+    const observer = new MutationObserver(() => {
+        const newUrl = window.location.href;
+        if (newUrl !== observer.lastUrl) {
+            observer.lastUrl = newUrl;
+            logVisitor(); // Log visitor data on URL change
+        }
+    });
+
+    // Start observing changes in the document
+    observer.lastUrl = window.location.href;
+    observer.observe(document.body, { childList: true, subtree: true });
 }
 
 // Initialize the visitor logging setup when the page loads

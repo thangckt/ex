@@ -65,7 +65,7 @@ async function logVisitor() {
     const timestamp = new Date().toLocaleString("en-US", { timeZone: "Asia/Seoul" });
     const visitorInfo = await getVisitorInfo();
     const browserInfo = getBrowserInfo();
-    const currentUrl = window.location.href;
+    const currentUrl = window.location.href.replace(window.location.origin, '');
 
     const jsonData = {
         timestamp: timestamp,

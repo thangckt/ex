@@ -2,7 +2,7 @@
 // Refactor by Thang and GPT
 
 
-const ScriptId = 'AKfycbwu0-C0qruhWzCG4Uu6N5E2iHqbBUhKWHk3OfzqKPVrjPFqNCKyPue3a46FFoV2gbNzog';
+const ScriptId = 'AKfycbwNDSlWS7t9BuJl1-gmrRC1noEERNHjfY3DLzJg-Z9_fuSxYmuVZW_62LKYSEQCfLlB';
 const URL = `https://script.google.com/macros/s/${ScriptId}/exec`;
 
 // Async function to send JSON data to Google Sheets via Google Apps Script

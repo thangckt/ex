@@ -2,13 +2,13 @@
 // Refactor by Thang and GPT
 
 // NOTE: notice about var_name in all js files
-const ScriptId_email = 'AKfycbwNDSlWS7t9BuJl1-gmrRC1noEERNHjfY3DLzJg-Z9_fuSxYmuVZW_62LKYSEQCfLlB';
-const URL_mail = `https://script.google.com/macros/s/${ScriptId_email}/exec`;
+var ScriptId_email = 'AKfycbwNDSlWS7t9BuJl1-gmrRC1noEERNHjfY3DLzJg-Z9_fuSxYmuVZW_62LKYSEQCfLlB';
+var URL = `https://script.google.com/macros/s/${ScriptId_email}/exec`;
 
 // Async function to send JSON data to Google Sheets via Google Apps Script
 async function sendDataToGoogleApp(jsonData) {
     try {
-        await fetch(URL_mail, {
+        await fetch(URL, {
             method: 'POST',
             body: JSON.stringify(jsonData),
             headers: { 'Content-Type': "text/plain;charset=utf-8" },

@@ -5,39 +5,33 @@
 // ref: Using Google App Mail: https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server
 
 
-const appScriptURL = 'https://script.google.com/macros/s/AKfycbx4zkochU3fvZELu4J3Mfhv1gZBi7Md2LKxvMoq2iBKO2ELTRjHeOLP2S8AVFWhIt4/exec';
-
+const ScriptId = 'AKfycbw7dBDbIyuaHm_Kgke46y8l3GSSH_BlvzPQ1M3tQG2sijcVm31I4hAIuPzQJRafvvjy-g'
+const URL = `https://script.google.com/macros/s/${ScriptId}/exec`
 
 // Async function to send JSON data to Google Sheets via Google Apps Script
 async function sendDataToGoogleApp(jsonData) {
     try {
-        const response = await fetch(appScriptURL, {
-            method: 'POST', // Specify the method
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: JSON.stringify(jsonData) // Convert the JSON object to a string
+        await fetch(URL, {
+            method: 'POST',
+            body: JSON.stringify(jsonData),
+            headers: { 'Content-Type': "text/plain;charset=utf-8" },
+            redirect: 'follow',
         });
-
-        const data = await response.text(); // Parse the response text
-        console.log('Data successfully sent:', data); // Log the response from the server
     } catch (error) {
-        console.error('Network error occurred while sending data to Google Sheet:', error);
+        console.error('Error while sending data to Google App:', error);
     }
 }
-
 
 // Fetch visitor info using ipapi.co API
 async function getVisitorInfo() {
     try {
         const response = await fetch('https://ipapi.co/json/');
-        if (!response.ok) throw new Error(`Error fetching visitor info: ${response.statusText}`);
-
         return await response.json();
     } catch (error) {
         console.error('Error retrieving visitor information:', error);
         return null;
     }
 }
-
 
 // Get browser information from user agent string
 function getBrowserInfo() {
@@ -66,32 +60,29 @@ function getBrowserInfo() {
     return browserInfo;
 }
 
-
 // Log visitor information and send to Google Sheet
-async function logVisitor(isClosing = false) {
+async function logVisitor() {
     const timestamp = new Date().toLocaleString("en-US", { timeZone: "Asia/Seoul" });
-    const browserInfo = getBrowserInfo();
     const visitorInfo = await getVisitorInfo();
+    const browserInfo = getBrowserInfo();
     const initialUrl = window.location.href;
 
-    if (visitorInfo) {
-        const jsonData = {
-            timestamp: timestamp,
-            ip: visitorInfo.ip,
-            org: visitorInfo.org,
-            city: visitorInfo.city,
-            region: visitorInfo.region,
-            country: visitorInfo.country_name,
-            postal: visitorInfo.postal,
-            latitude: visitorInfo.latitude,
-            longitude: visitorInfo.longitude,
-            asn: visitorInfo.asn,
-            browser: `${browserInfo.name} ${browserInfo.version}`,
-            os: navigator.platform,
-            initialUrl: initialUrl,
-        };
-        await sendDataToGoogleApp(jsonData);
-    }
+    const jsonData = {
+        timestamp: timestamp,
+        ip: visitorInfo.ip,
+        org: visitorInfo.org,
+        city: visitorInfo.city,
+        region: visitorInfo.region,
+        country: visitorInfo.country_name,
+        postal: visitorInfo.postal,
+        latitude: visitorInfo.latitude,
+        longitude: visitorInfo.longitude,
+        asn: visitorInfo.asn,
+        browser: `${browserInfo.name} ${browserInfo.version}`,
+        os: navigator.platform,
+        initialUrl: initialUrl,
+    };
+    await sendDataToGoogleApp(jsonData);
 }
 
 // Store the initial URL when the page loads

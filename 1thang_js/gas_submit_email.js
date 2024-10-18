@@ -2,51 +2,39 @@
 // Refactor by Thang and GPT
 
 
-const appScriptURL = "https://script.google.com/macros/s/AKfycbxmd9UxNXhJoBXFwksde4ip_G1YMofHVHOT4ZLOIpJ8mzYxneUa48sTK2X1GU6cnkfP/exec";
+const ScriptId = 'AKfycbwu0-C0qruhWzCG4Uu6N5E2iHqbBUhKWHk3OfzqKPVrjPFqNCKyPue3a46FFoV2gbNzog'
+const URL = `https://script.google.com/macros/s/${ScriptId}/exec`
 
 // Async function to send JSON data to Google Sheets via Google Apps Script
 async function sendDataToGoogleApp(jsonData) {
     try {
-        const response = await fetch(appScriptURL, {
-            method: 'POST', // Specify the method
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: JSON.stringify(jsonData) // Convert the JSON object to a string
+        await fetch(URL, {
+            method: 'POST',
+            body: JSON.stringify(jsonData),
+            headers: { 'Content-Type': "text/plain;charset=utf-8" },
+            redirect: 'follow',
         });
-
-        const data = await response.text(); // Parse the response text
-        console.log('Data successfully sent:', data); // Log the response from the server
     } catch (error) {
-        console.error('Network error occurred while sending data to Google Sheet:', error);
+        console.error('Error while sending data to Google App:', error);
     }
 }
 
-
 // Get all data from the form and return JSON-data
 function getFormData(form) {
-    const formData = {};
-
-    // Collect input field values
-    formData.name = form.querySelector('input[name="name"]').value;
-    formData.email = form.querySelector('input[name="email"]').value;
-    formData.subject = form.querySelector('input[name="subject"]').value;
-    formData.message = form.querySelector('textarea[name="message"]').value;
-
-    // Honeypot field for spam protection
-    formData.honeypot = form.querySelector('input[name="honeypot"]').value;
-
-    return formData;
+    const jsonData = {};
+    jsonData.timestamp = new Date().toLocaleString("en-US", { timeZone: "Asia/Seoul" });
+    jsonData.name = form.querySelector('input[name="name"]').value;
+    jsonData.email = form.querySelector('input[name="email"]').value;
+    jsonData.subject = form.querySelector('input[name="subject"]').value;
+    jsonData.message = form.querySelector('textarea[name="message"]').value;
+    jsonData.honeypot = form.querySelector('input[name="honeypot"]').value;
+    return jsonData;
 }
 
 // Disable all buttons in the form while submission is happening
-function disableAllButtons(form) {
+function disableSentButton(form) {
     const buttons = form.querySelectorAll("button, input[type='submit']");
     buttons.forEach(button => button.disabled = true);
-}
-
-// Enable all buttons in the form (used for error handling)
-function enableAllButtons(form) {
-    const buttons = form.querySelectorAll("button, input[type='submit']");
-    buttons.forEach(button => button.disabled = false);
 }
 
 // Function to handle form submission
@@ -61,6 +49,8 @@ async function handleFormSubmit(event) {
         return; // Do not submit the form
     }
 
+    disableSentButton(form); // Disable all buttons in the form
+
     // Hide the form elements
     const formElements = form.querySelector(".form-elements");
     if (formElements) {
@@ -73,10 +63,7 @@ async function handleFormSubmit(event) {
         sendingMessage.style.display = "block";
     }
 
-    disableAllButtons(form); // Disable all buttons in the form
-
     try {
-        // Send the form data
         await sendDataToGoogleApp(formData);
 
         // Hide the sending message
@@ -91,21 +78,10 @@ async function handleFormSubmit(event) {
         }
 
         form.reset(); // Reset the form fields
+        console.log('Form submitted successfully');
 
     } catch (error) {
         alert('There was an error submitting the form. Please try again.');
-
-        // Show form elements again on error
-        if (formElements) {
-            formElements.style.display = "block";
-        }
-
-        // Hide sending message on error
-        if (sendingMessage) {
-            sendingMessage.style.display = "none";
-        }
-
-        enableAllButtons(form); // Enable buttons again on error
     }
 }
 

@@ -85,30 +85,8 @@ async function logVisitor() {
     await sendDataToGoogleApp(jsonData);
 }
 
-// Function to handle both page load and URL changes
-function setupVisitorLogging() {
-    // Log visitor info when the page is loaded
-    logVisitor();
 
-    // Handle back/forward navigation (popstate) and hash changes (hashchange)
-    window.addEventListener("popstate", logVisitor); // Back/forward button navigation
-    window.addEventListener("hashchange", logVisitor); // Hash-based URL changes
-
-    // MutationObserver to detect DOM changes in case of client-side routing in SPAs
-    const observer = new MutationObserver(() => {
-        const newUrl = window.location.href;
-        if (newUrl !== observer.lastUrl) {
-            observer.lastUrl = newUrl;
-            logVisitor(); // Log visitor data on URL change
-        }
-    });
-
-    // Start observing changes in the document
-    observer.lastUrl = window.location.href;
-    observer.observe(document.body, { childList: true, subtree: true });
-}
-
-// Initialize the visitor logging setup when the page loads
+// Function trigger the visitor logging when the page loads
 window.onload = function () {
-    setupVisitorLogging();
+    logVisitor();
 };

@@ -65,7 +65,7 @@ async function logVisitor() {
     const timestamp = new Date().toLocaleString("en-US", { timeZone: "Asia/Seoul" });
     const visitorInfo = await getVisitorInfo();
     const browserInfo = getBrowserInfo();
-    const initialUrl = window.location.href;
+    const currentUrl = window.location.href;
 
     const jsonData = {
         timestamp: timestamp,
@@ -80,17 +80,22 @@ async function logVisitor() {
         asn: visitorInfo.asn,
         browser: `${browserInfo.name} ${browserInfo.version}`,
         os: navigator.platform,
-        initialUrl: initialUrl,
+        currentUrl: currentUrl,
     };
     await sendDataToGoogleApp(jsonData);
 }
 
-// Store the initial URL when the page loads
-window.onload = function () {
+// Function to handle both page load and URL changes
+function setupVisitorLogging() {
+    // Log visitor info when the page is loaded
     logVisitor();
-};
 
-// // Trigger logVisitor on window close
-// window.onbeforeunload = function () {
-//     logVisitor(true); // Pass true to indicate closing event
-// };
+    // Log visitor info when the URL changes (for Single Page Apps or in-page navigation)
+    window.addEventListener("popstate", logVisitor); // Handles back/forward navigation
+    window.addEventListener("hashchange", logVisitor); // Handles hash-based navigation
+}
+
+// Initialize the visitor logging setup when the page loads
+window.onload = function () {
+    setupVisitorLogging();
+};

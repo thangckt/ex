@@ -2657,9 +2657,11 @@ data-ad-slot="1234567890"></ins>
 <div class="content-column" id="content-column">
 <script>
     // Automatically load and play default video when the page loads
-    window.addEventListener('load', function () {
+    (function () {
+        window.onload = function () {
         playVideojs('https://fox-foxnewsnow-samsungus.amagi.tv/playlist720p.m3u8');
-    });
+        };
+    })();
 </script>
 
 

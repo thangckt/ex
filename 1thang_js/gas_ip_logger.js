@@ -102,7 +102,7 @@
 
     // Function trigger the visitor logging when the page loads
     window.onload = function () {
-        setTimeout(logVisitor, 5000); // Wait for 5000 milliseconds (5 seconds) before calling logVisitor
+        setTimeout(logVisitor, 3000); // Wait for 5000 milliseconds (5 seconds) before calling logVisitor
     };
 
 })();

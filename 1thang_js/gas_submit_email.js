@@ -21,10 +21,25 @@
         }
     }
 
+    function getTimestamp() {
+        const options = {
+            timeZone: "Asia/Seoul",
+            year: 'numeric',
+            month: 'short',  // short: "Jan", long: "January"
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false // 24-hour format
+        };
+        const timestamp = new Date().toLocaleString("en-US", options);
+        return timestamp.replace(/ at /, ', ');
+    }
+
     // Get all data from the form and return JSON-data
     function getFormData(form) {
         const jsonData = {};
-        jsonData.timestamp = new Date().toLocaleString("en-US", { timeZone: "Asia/Seoul" });
+        jsonData.timestamp = getTimestamp()
         jsonData.name = form.querySelector('input[name="name"]').value;
         jsonData.email = form.querySelector('input[name="email"]').value;
         jsonData.subject = form.querySelector('input[name="subject"]').value;

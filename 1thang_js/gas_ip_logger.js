@@ -37,7 +37,7 @@
             visitorInfo = {
                 ip: jdata.ip,
                 org: jdata.org,
-                city: jdata.city,
+                city: jdata.city + '-' + jdata.region,
                 country: jdata.country_name,
                 postal: jdata.postal,
                 asn: jdata.asn,
@@ -80,6 +80,11 @@
                 };
             } catch (error) {
                 console.error('Failed to get visitor info from ipinfo.io:', error);
+            }
+        }
+        if (isEmpty(visitorInfo)) {
+            visitorInfo = {
+                org: 'not available',
             }
         }
 

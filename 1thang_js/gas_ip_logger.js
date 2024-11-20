@@ -140,10 +140,12 @@
         }
         // Get position
         if (navigator.geolocation) {
-            const pos = navigator.geolocation.getCurrentPosition();
-            browserInfo.loc = pos.coords.latitude + ',' + pos.coords.longitude;
+            navigator.geolocation.getCurrentPosition(savePosition);
         } else {
             browserInfo.loc = "N/A";
+        }
+        function savePosition(position) {
+            browserInfo.loc = pos.coords.latitude + ',' + pos.coords.longitude;
         }
 
         return browserInfo;

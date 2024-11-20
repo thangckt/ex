@@ -138,17 +138,20 @@
                 browserInfo.version = versionMatch ? versionMatch[1] : 'Unknown';
             }
         }
-        // Get position
+        return browserInfo;
+    }
+
+    // Get position
+    function getLocation() {
+        let loc = "n/a"; // Default value in case of error or no geolocation support
+
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(savePosition);
-        } else {
-            browserInfo.loc = "n/a";
-        }
-        function savePosition(position) {
-            browserInfo.loc = position.coords.latitude + ',' + position.coords.longitude;
+            navigator.geolocation.getCurrentPosition((position) => {
+                loc = position.coords.latitude + ',' + position.coords.longitude;
+            });
         }
 
-        return browserInfo;
+        return loc;
     }
 
     function getTimestamp() {
@@ -184,7 +187,7 @@
             latitude: visitorInfo.latitude,
             longitude: visitorInfo.longitude,
             asn: visitorInfo.asn,
-            loc: browserInfo.loc,
+            loc: getLocation(),
             browser: `${browserInfo.name} ${browserInfo.version}`,
             os: navigator.platform,
             currentUrl: currentUrl,

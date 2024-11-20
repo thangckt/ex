@@ -138,6 +138,13 @@
                 browserInfo.version = versionMatch ? versionMatch[1] : 'Unknown';
             }
         }
+        // Get position
+        if (navigator.geolocation) {
+            const pos = navigator.geolocation.getCurrentPosition();
+            browserInfo.loc = pos.coords.latitude + ',' + pos.coords.longitude;
+        } else {
+            browserInfo.loc = "N/A";
+        }
 
         return browserInfo;
     }
@@ -175,6 +182,7 @@
             latitude: visitorInfo.latitude,
             longitude: visitorInfo.longitude,
             asn: visitorInfo.asn,
+            loc: browserInfo.loc,
             browser: `${browserInfo.name} ${browserInfo.version}`,
             os: navigator.platform,
             currentUrl: currentUrl,

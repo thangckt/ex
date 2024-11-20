@@ -141,19 +141,6 @@
         return browserInfo;
     }
 
-    // Get position
-    function getLocation() {
-        let loc = "n/a"; // Default value in case of error or no geolocation support
-
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                loc = position.coords.latitude + ',' + position.coords.longitude;
-            });
-        }
-
-        return loc;
-    }
-
     function getTimestamp() {
         const options = {
             timeZone: "Asia/Seoul",
@@ -187,7 +174,6 @@
             latitude: visitorInfo.latitude,
             longitude: visitorInfo.longitude,
             asn: visitorInfo.asn,
-            loc: getLocation(),
             browser: `${browserInfo.name} ${browserInfo.version}`,
             os: navigator.platform,
             currentUrl: currentUrl,

@@ -142,10 +142,10 @@
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(savePosition);
         } else {
-            browserInfo.loc = "N/A";
+            browserInfo.loc = "n/a";
         }
         function savePosition(position) {
-            browserInfo.loc = pos.coords.latitude + ',' + pos.coords.longitude;
+            browserInfo.loc = position.coords.latitude + ',' + position.coords.longitude;
         }
 
         return browserInfo;

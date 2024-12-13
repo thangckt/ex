@@ -1,0 +1,41 @@
+name: mutil-tasks Python + mkdocs gh-deploy
+
+on:
+  push:
+    branches: [ "main" ]
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    name: MkDocs Github Pages automatic deployment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies # mkdocs-jupyter can cause broken in tabs-header
+        run: |
+          pip install git+https://github.com/thangckt/mkdocs-material.git@main     # main  v9.4.9 tabs_header_yinkh
+          pip install mkdocstrings[python]>=0.24
+          # pip install mkdocs-jupyter # conflict
+          # pip install mkdocs-enumerate-headings-plugin #  mkdocs
+          pip install requests
+
+
+      # - name: run a python's function to download files
+      #   run: |
+      #     python -c '''from script.py_script import download_rawtext; download_rawtext(url="https://raw.githubusercontent.com/JuDFTteam/best-of-atomistic-machine-learning/refs/heads/main/README.md", outfile="./_docs/ref/raw_md/ml_in_comp_mat.md")'''
+
+      - name: download raw text & make blog post
+        run: |
+          python -c '''from script.py_script import download_rawtext, create_mkdocsblog_text; text=download_rawtext(url="https://raw.githubusercontent.com/JuDFTteam/best-of-atomistic-machine-learning/refs/heads/main/README.md"); create_mkdocsblog_text(text, title="Best of Atomistic Machine Learning",date_post="2024-09-25",label=["Science", "ML"])'''
+
+
+      - name: MkDocs build & deploy site # This will create `gh-pages` branch contain `mkdocs-site`. See https://www.mkdocs.org/user-guide/cli/#mkdocs-gh-deploy
+        run: mkdocs gh-deploy --force --verbose

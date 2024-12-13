@@ -1,0 +1,37 @@
+### source: https://stackoverflow.com/questions/70458458/how-do-i-simply-run-a-python-script-from-github-repo-with-actions
+
+name: run python script
+
+on:
+  # push:
+  #   branches: [ "main" ]
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+
+      - name: Install dependencies # install some packages
+        run: |
+          python --version
+          pip install requests
+
+      # - name: run a python file
+      #   run: |
+      #     python my_file.py
+
+      - name: run a python's function to download files
+        run: |
+          python -c '''from script.py_script import download_rawtext; download_rawtext(url="https://raw.githubusercontent.com/JuDFTteam/best-of-atomistic-machine-learning/refs/heads/main/README.md", outfile="./_docs/ref/raw_md/ml_in_comp_mat.md")'''
+
+      - name: Commit files      # Commit all changed files back to the repository
+        uses: stefanzweifel/git-auto-commit-action@v5

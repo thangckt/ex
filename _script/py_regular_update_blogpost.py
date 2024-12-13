@@ -5,7 +5,6 @@ def download_rawtext(url: str, outfile: str = None) -> str:
     """Download raw text from a URL."""
     response = requests.get(url)
     if response.status_code == 200:
-        print(f"Successful download: {url}")
         text = response.text
     else:
         print(f"Failed to download {url}. HTTP Status: {response.status_code}")
@@ -14,8 +13,8 @@ def download_rawtext(url: str, outfile: str = None) -> str:
     if text and outfile:
         with open(outfile, "w") as f:
             f.write(text)
+        print(f"File downloaded: {outfile}")
     return text
-
 
 def create_mkdocsblog_text(
     text: str,

@@ -81,7 +81,7 @@
         const end = new Date(endDate); // Convert end date to a Date object
 
         if (currentDate >= start && currentDate <= end) {
-            make_snow(nSnow = 80, maxSize = 5, maxSpeed = 1, color = '#ddd');
+            // make_snow(nSnow = 80, maxSize = 5, maxSpeed = 1, color = '#ddd');
             make_snow(nSnow = 50, maxSize = 4, maxSpeed = 1, color = '#aab7b8 ');
         }
     }

@@ -7,7 +7,9 @@
     function makeSnow({
         nSnow = 100,
         maxSize = 4,
+        minSize = 1,
         maxSpeed = 1,
+        minSpeed = 0.2,
         colors = ['#ddd']
     } = {}) {
         const canvas = document.createElement('canvas');
@@ -25,9 +27,9 @@
         const createSnowflake = () => ({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            radius: Math.floor(Math.random() * maxSize) + 1,
+            radius: Math.floor(Math.random() * maxSize) + minSize,
             color: colors[Math.floor(Math.random() * colors.length)],
-            speed: Math.random() * maxSpeed + 0.1,  // Ensure snowflakes have a speed starting from 0.1
+            speed: Math.random() * maxSpeed + minSpeed,  // Ensure snowflakes have a speed starting from 0.1
             sway: Math.random() - 0.5,
         });
 
@@ -87,7 +89,7 @@
 
         // Check if current date is between Dec 10 and Jan 10
         if ((currentMonth === 12 && currentDay >= 10) || (currentMonth === 1 && currentDay <= 10)) {
-            makeSnow({ nSnow: 90, maxSize: 4, maxSpeed: 0.5, colors: ['#ddd', '#808b96'] });
+            makeSnow({ nSnow: 90, maxSize: 4, maxSpeed: 0.7, colors: ['#ddd', '#b0e0e6', '#dcdcdc', '#add8e6', '#f0f8ff', '#e0ffff'] });
         }
     }
 

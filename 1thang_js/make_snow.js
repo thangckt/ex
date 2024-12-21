@@ -89,7 +89,7 @@
 
         // Check if current date is between Dec 10 and Jan 10
         if ((currentMonth === 12 && currentDay >= 10) || (currentMonth === 1 && currentDay <= 10)) {
-            makeSnow({ nSnow: 90, maxSize: 4, maxSpeed: 0.7, colors: ['#ddd', '#b0e0e6', '#dcdcdc', '#add8e6', '#f0f8ff', '#e0ffff'] });
+            makeSnow({ nSnow: 90, maxSize: 4, maxSpeed: 0.7, colors: ['#ffffff', '#ddddd', '#C0C0C0', '#808080', '#b0e0e6', '#e0ffff'] });
         }
     }
 

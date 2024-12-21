@@ -113,6 +113,8 @@
     }
 
     // Call the functions
-    dayToRun(10, 12, 10, 1); // Run from December 10th to January 10th
+    // dayToRun(10, 12, 10, 1); // Run from December 10th to January 10th
+
+    makeSnow({ nSnow: 100, maxSize: 5, maxSpeed: 1, colors: ['#ddd', '#aab7b8'] });
 
 })();

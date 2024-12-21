@@ -12,7 +12,7 @@
 
     const snowflakes = [];
     const canvas = document.createElement('canvas');
-    canvas.style.position = 'absolute';
+    canvas.style.position = 'fixed';
     canvas.style.pointerEvents = 'none';
     canvas.style.top = '0px';
     canvas.width = window.innerWidth;

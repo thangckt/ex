@@ -80,41 +80,17 @@
         animate();
     }
 
-
-    function getDayOfYear(date) {
-        const start = new Date(date.getFullYear(), 0, 0);
-        const diff = date - start;
-        const oneDay = 1000 * 60 * 60 * 24;
-        return Math.floor(diff / oneDay);
-    }
-
-    function dayToRun(startDay, startMonth, endDay, endMonth) {
+    function dayToRun() {
         const currentDate = new Date();
-        const currentDayOfYear = getDayOfYear(currentDate);
+        const currentMonth = currentDate.getMonth() + 1; // Months are 0-based
+        const currentDay = currentDate.getDate();
 
-        const startDate = new Date(currentDate.getFullYear(), startMonth - 1, startDay);
-        const endDate = new Date(currentDate.getFullYear(), endMonth - 1, endDay);
-
-        const startDayOfYear = getDayOfYear(startDate);
-        const endDayOfYear = getDayOfYear(endDate);
-
-        let isInInterval = false;
-
-        if (startDayOfYear <= endDayOfYear) {
-            isInInterval = currentDayOfYear >= startDayOfYear && currentDayOfYear <= endDayOfYear;
-        } else {
-            // If the range crosses the year boundary
-            isInInterval = currentDayOfYear >= startDayOfYear || currentDayOfYear <= endDayOfYear;
-        }
-
-        if (isInInterval) {
-            makeSnow({ nSnow: 100, maxSize: 5, maxSpeed: 1, colors: ['#ddd', '#aab7b8'] });
+        // Check if current date is between Dec 10 and Jan 10
+        if ((currentMonth === 12 && currentDay >= 10) || (currentMonth === 1 && currentDay <= 10)) {
+            makeSnow({ nSnow: 100, maxSize: 3, maxSpeed: 1, colors: ['#ddd', '#808b96'] });
         }
     }
 
     // Call the functions
-    // dayToRun(10, 12, 10, 1); // Run from December 10th to January 10th
-
-    makeSnow({ nSnow: 100, maxSize: 5, maxSpeed: 1, colors: ['#ddd', '#aab7b8'] });
-
+    dayToRun();
 })();

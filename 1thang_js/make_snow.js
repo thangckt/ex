@@ -80,16 +80,32 @@
         animate();
     }
 
+
+    function getDayOfYear(date) {
+        const start = new Date(date.getFullYear(), 0, 0);
+        const diff = date - start;
+        const oneDay = 1000 * 60 * 60 * 24;
+        return Math.floor(diff / oneDay);
+    }
+
     function dayToRun(startDay, startMonth, endDay, endMonth) {
         const currentDate = new Date();
-        const currentDayOfYear = currentDate.getMonth() * 31 + currentDate.getDate(); // Approximate day of the year
-        const startDayOfYear = (startMonth - 1) * 31 + startDay;
-        const endDayOfYear = (endMonth - 1) * 31 + endDay;
+        const currentDayOfYear = getDayOfYear(currentDate);
 
-        const isInInterval =
-            startDayOfYear <= endDayOfYear
-                ? currentDayOfYear >= startDayOfYear && currentDayOfYear <= endDayOfYear
-                : currentDayOfYear >= startDayOfYear || currentDayOfYear <= endDayOfYear;
+        const startDate = new Date(currentDate.getFullYear(), startMonth - 1, startDay);
+        const endDate = new Date(currentDate.getFullYear(), endMonth - 1, endDay);
+
+        const startDayOfYear = getDayOfYear(startDate);
+        const endDayOfYear = getDayOfYear(endDate);
+
+        let isInInterval = false;
+
+        if (startDayOfYear <= endDayOfYear) {
+            isInInterval = currentDayOfYear >= startDayOfYear && currentDayOfYear <= endDayOfYear;
+        } else {
+            // If the range crosses the year boundary
+            isInInterval = currentDayOfYear >= startDayOfYear || currentDayOfYear <= endDayOfYear;
+        }
 
         if (isInInterval) {
             makeSnow({ nSnow: 100, maxSize: 5, maxSpeed: 1, colors: ['#ddd', '#aab7b8'] });

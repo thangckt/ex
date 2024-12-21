@@ -27,7 +27,7 @@
             y: Math.random() * canvas.height,
             radius: Math.floor(Math.random() * maxSize) + 1,
             color: colors[Math.floor(Math.random() * colors.length)],
-            speed: Math.random() * maxSpeed + 1,
+            speed: Math.random() * maxSpeed + 0.1,  // Ensure snowflakes have a speed starting from 0.1
             sway: Math.random() - 0.5,
         });
 

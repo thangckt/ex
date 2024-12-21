@@ -80,20 +80,23 @@
         animate();
     }
 
-    function dayToRun(startDate, endDate) {
-        const currentDate = new Date(); // Get the current date
-        const start = new Date(startDate); // Convert start date to a Date object
-        const end = new Date(endDate); // Convert end date to a Date object
+    function dayToRun(startDay, startMonth, endDay, endMonth) {
+        const currentDate = new Date();
+        const currentDayOfYear = currentDate.getMonth() * 31 + currentDate.getDate(); // Approximate day of the year
+        const startDayOfYear = (startMonth - 1) * 31 + startDay;
+        const endDayOfYear = (endMonth - 1) * 31 + endDay;
 
-        if (currentDate >= start && currentDate <= end) {
-            // make_snow(nSnow = 80, maxSize = 5, maxSpeed = 1, color = );
-            makeSnow({ nSnow: 80, maxSize: 5, maxSpeed: 1, colors =['#ddd', '#aab7b8'] });
+        const isInInterval =
+            startDayOfYear <= endDayOfYear
+                ? currentDayOfYear >= startDayOfYear && currentDayOfYear <= endDayOfYear
+                : currentDayOfYear >= startDayOfYear || currentDayOfYear <= endDayOfYear;
+
+        if (isInInterval) {
+            makeSnow({ nSnow: 100, maxSize: 5, maxSpeed: 1, colors: ['#ddd', '#aab7b8'] });
         }
     }
 
     // Call the functions
-    const startDate = "2024-12-10"; // Define the start of the interval
-    const endDate = "2025-01-10"; // Define the end of the interval
-    dayToRun(startDate, endDate)
+    dayToRun(10, 12, 10, 1); // Run from December 10th to January 10th
 
 })();

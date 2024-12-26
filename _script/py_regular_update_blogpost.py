@@ -16,6 +16,7 @@ def download_rawtext(url: str, outfile: str = None) -> str:
         print(f"File downloaded: {outfile}")
     return text
 
+
 def create_mkdocsblog_text(
     text: str,
     title: str = None,
@@ -93,6 +94,13 @@ def main():
         url="https://raw.githubusercontent.com/vinta/awesome-python/refs/heads/master/README.md",
         title="Awesome Python",
         date_post="2024-09-20",
+        label=["Python"],
+    )
+    ### Post 5
+    update_post(
+        url="https://raw.githubusercontent.com/Eipgen/Neural-Network-Models-for-Chemistry/refs/heads/main/README.md",
+        title="Neural Network Models for Chemistry",
+        date_post="2024-12-20",
         label=["Python"],
     )
     return

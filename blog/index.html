@@ -2395,6 +2395,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#neural-network-models-for-chemistry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neural Network Models for Chemistry
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#best-of-python" class="md-nav__link">
     <span class="md-ellipsis">
       Best of Python
@@ -2462,6 +2471,478 @@
       <header class="md-typeset">
         <h1 id="blog">Blog<a class="headerlink" href="#blog" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://thang.eu.org/1images/thang_pic.jpg" alt="C.Thang Nguyen">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-12-20 00:00:00+00:00">December 20, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/python/" class="md-meta__link">Python</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              14 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="neural-network-models-for-chemistry"><a class="toclink" href="2024/12/20/neural-network-models-for-chemistry/">Neural Network Models for Chemistry</a></h2>
+<p># Neural-Network-Models-for-Chemistry
+<a href="https://github.com/DiracMD/Neural-Network-Models-for-chemistry/actions/workflows/main.yml"><img alt="Check Markdown links" src="https://github.com/DiracMD/Neural-Network-Models-for-chemistry/actions/workflows/main.yml/badge.svg" /></a></p>
+<p>A collection of Neural Network Models for chemistry
+- <a href="https://github.com/Eipgen/Neural-Network-Models-for-Chemistry/blob/main/README.md#quantum-chemistry-method">Quantum Chemistry Method</a>
+- <a href="https://github.com/Eipgen/Neural-Network-Models-for-Chemistry/blob/main/README.md#force-field-method">Force Field Method</a>
+- <a href="https://github.com/Eipgen/Neural-Network-Models-for-Chemistry/blob/main/README.md#Semi-Empirical-Quantum-Mechanical-Method">Semi-Empirical Method</a>
+- <a href="https://github.com/Eipgen/Neural-Network-Models-for-Chemistry/blob/main/README.md#Coarse-Grained-Method">Coarse-Grained Method</a>
+- <a href="https://github.com/Eipgen/Neural-Network-Models-for-Chemistry/blob/main/README.md#Enhanced-Sampling-Method">Enhanced Sampling Method</a>
+- <a href="https://github.com/Eipgen/Neural-Network-Models-for-Chemistry/blob/main/README.md#QMMM-Model">QM/MM Method</a>
+- <a href="https://github.com/Eipgen/Neural-Network-Models-for-Chemistry/blob/main/README.md#Charge-Model">Charge Method</a></p>
+<h3 id="quantum-chemistry-method"><a class="toclink" href="2024/12/20/neural-network-models-for-chemistry/#quantum-chemistry-method">Quantum Chemistry Method</a></h3>
+<ul>
+<li>
+<p><a href="https://github.com/deepmodeling/deepks-kit">DeePKS, DeePHF</a><br />
+DeePKS-kit is a program to generate accurate energy functionals for quantum chemistry systems, for both perturbative scheme (DeePHF) and self-consistent scheme (DeePKS).</p>
+</li>
+<li>
+<p><a href="https://github.com/semodi/neuralxc">NeuralXC</a><br />
+Implementation of a machine-learned density functional.</p>
+</li>
+</ul>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li>
+<p><a href="https://aip.scitation.org/doi/10.1063/5.0032362">MOB-ML</a> <br />
+Machine Learning for Molecular Orbital Theory.</p>
+</li>
+<li>
+<p><a href="https://github.com/deepmind/deepmind-research/tree/master/density_functional_approximation_dm21">DM21</a><br />
+Pushing the Frontiers of Density Functionals by Solving the Fractional Electron Problem.</p>
+</li>
+<li><a href="https://github.com/ml-electron-project/NNfunctional">NN-GGA, NN-NRA, NN-meta-GGA, NN-LSDA</a><br />
+Completing density functional theory by machine-learning hidden messages from molecules.</li>
+<li><a href="https://github.com/deepmind/ferminet">FemiNet</a><br />
+FermiNet is a neural network for learning highly accurate ground state wavefunctions of atoms and molecules using a variational Monte Carlo approach.</li>
+<li><a href="https://github.com/deepqmc/deepqmc">DeePQMC</a><br />
+DeepQMC implements variational quantum Monte Carlo for electrons in molecules, using deep neural networks written in PyTorch as trial wave functions.</li>
+<li><a href="https://www.nature.com/articles/s41557-020-0544-y#Bib1">PauliNet</a><br />
+PauliNet builds upon HF or CASSCF orbitals as a physically meaningful baseline and takes a neural network approach to the SJB wavefunction in order tocorrect this baseline towards a high-accuracy solution.</li>
+<li><a href="https://github.com/mdsunivie/deeperwin">DeePErwin</a><br />
+DeepErwin is python package that implements and optimizes wave function models for numerical solutions to the multi-electron Schrödinger equation.</li>
+<li><a href="https://github.com/google-research/google-research/tree/master/jax_dft">Jax-DFT</a><br />
+JAX-DFT implements one-dimensional density functional theory (DFT) in JAX. It uses powerful JAX primitives to enable JIT compilation, automatical differentiation, and high-performance computation on GPUs.</li>
+<li><a href="https://github.com/DEShawResearch/sns-mp2">sns-mp2</a><br />
+Improving the accuracy of Moller-Plesset perturbation theory with neural networks</li>
+<li><a href="https://github.com/mzjb/DeepH-pack">DeepH-pack</a><br />
+Deep neural networks for density functional theory Hamiltonian.
+-<a href="https://github.com/Xiaoxun-Gong/DeepH-E3">DeepH-E3</a><br />
+General framework for E(3)-equivariant neural network representation of density functional theory Hamiltonian</li>
+<li><a href="https://gitlab.com/jmargraf/kdf">kdft</a><br />
+The Kernel Density Functional (KDF) code allows generating ML-based DFT functionals.</li>
+<li><a href="https://github.com/MihailBogojeski/ml-dft">ML-DFT</a><br />
+ML-DFT: Machine learning for density functional approximations This repository contains the implementation for the kernel ridge regression based density functional approximation method described in the paper "Quantum chemical accuracy from density functional approximations via machine learning".</li>
+<li><a href="https://github.com/sail-sg/d4ft">D4FT</a><br />
+this work proposed a deep-learning approach to KS-DFT. First, in contrast to the conventional SCF loop, directly minimizing the total energy by reparameterizing the orthogonal constraint as a feed-forward computation. They prove that such an approach has the same expressivity as the SCF method yet reduces the computational complexity from O(N^4) to O(N^3)</li>
+<li><a href="https://github.com/atomistic-machine-learning/SchNOrb">SchOrb</a><br />
+Unifying machine learning and quantum chemistry with a deep neural network for molecular wavefunctions</li>
+</ul>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li><a href="https://github.com/mir-group/CiderPress">CiderPress</a><br />
+Tools for training and evaluating CIDER functionals for use in Density Functional Theory calculations.</li>
+</ul>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/acs.jctc.3c00848">ML-RPA</a><br />
+This work demonstrates how machine learning can extend the applicability of the RPA to larger system sizes, time scales, and chemical spaces.</li>
+</ul>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li><a href="https://pubs.aip.org/aip/jcp/article/159/24/244106/2931521/Kohn-Sham-accuracy-from-orbital-free-density">ΔOF-MLFF</a><br />
+a Δ-machine learning model for obtaining Kohn–Sham accuracy from orbital-free density functional theory (DFT) calculations</li>
+</ul>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li>
+<p><a href="https://doi.org/10.26434/chemrxiv-2023-n1skn">PairNet</a> <br />
+A molecular orbital based machine learning model for predicting accurate CCSD(T) correlation energies. The model, named as PairNet, shows excellent transferability on several public data sets using features inspired by pair natural orbitals(PNOs).</p>
+</li>
+<li>
+<p><a href="https://github.com/lcmd-epfl/SPAHM-RHO">SPAHM(a,b)</a><br />
+SPAHM(a,b): encoding the density information from guess Hamiltonian in quantum machine learning representations</p>
+</li>
+<li><a href="https://github.com/XanaduAI/GradDFT">GradDFT</a><br />
+GradDFT is a JAX-based library enabling the differentiable design and experimentation of exchange-correlation functionals using machine learning techniques.</li>
+<li><a href="https://github.com/bytedance/LapNet">lapnet</a><br />
+A JAX implementation of the algorithm and calculations described in Forward Laplacian: A New Computational Framework for Neural Network-based Variational Monte Carlo.</li>
+<li><a href="https://zenodo.org/records/10616893">M-OFDFT</a><br />
+M-OFDFT is a deep-learning implementation of orbital-free density functional theory that achieves DFT-level accuracy on molecular systems but with lower cost complexity, and can extrapolate to much larger molecules than those seen during training</li>
+</ul>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li><a href="https://doi.org/10.26434/chemrxiv-2024-2qw5x">ANN for Schrodinger</a><br />
+  Artificial neural networks (NN) are universal function approximators and have shown great ability in computing the ground state energy of the electronic Schrödinger equation, yet NN has not established itself as a practical and accurate approach to solving the vibrational Schrödinger equation for realistic polyatomic molecules to obtain vibrational energies and wave functions for the excited states</li>
+<li><a href="https://github.com/JoshRackers/equivariant_electron_density">equivariant_electron_density</a><br />
+  Generate and predict molecular electron densities with Euclidean Neural Networks</li>
+<li><a href="https://github.com/peterbjorgensen/DeepDFT">DeePDFT</a><br />
+This is the official Implementation of the DeepDFT model for charge density prediction.</li>
+<li><a href="https://github.com/hjkgrp/dfa_recommender">DFA_recommeder</a><br />
+  System-specific density functional recommender</li>
+<li><a href="https://arxiv.org/pdf/2410.07972v1">EG-XC</a><br />
+The accuracy of density functional theory hinges on the approximation of nonlocal contributions to the exchange-correlation (XC) functional. To date, machine-learned and human-designed approximations suffer from insufficient accuracy, limited scalability, or dependence on costly reference data. To address these issues, we introduce Equivariant Graph Exchange Correlation (EG-XC), a novel non-local XC functional based on equivariant graph neural network</li>
+<li><a href="https://github.com/kyonofx/scdp">scdp</a><br />
+Machine learning methods are promising in significantly accelerating charge density prediction, yet existing approaches either lack accuracy or scalability. They  propose a recipe that can achieve both. In particular, they identify three key ingredients: (1) representing the charge density with atomic and virtual orbitals (spherical fields centered at atom/virtual coordinates); (2) using expressive and learnable orbital basis sets (basis function for the spherical fields); and (3) using high-capacity equivariant neural network architecture</li>
+<li><a href="https://github.com/TheorChemGroup/physics-informed-DFT">physics-informed-DFT</a><br />
+We have developed an approach for physics-informed training of flexible empirical density functionals. In this approach, the “physics knowledge” is transferred from PBE, or any other exact-constraints-based functional, using local exchange−correlation energy density regularization, i.e., by adding its local energies into the training set</li>
+</ul>
+<h3 id="green-function"><a class="toclink" href="2024/12/20/neural-network-models-for-chemistry/#green-function">Green Function</a></h3>
+<ul>
+<li><a href="https://arxiv.org/abs/2312.14680">DeepGreen</a><br />
+The many-body Green's function provides access to electronic properties beyond density functional theory level in ab inito calculations. It present proof-of-concept benchmark results for both molecules and simple periodic systems, showing that our method is able to provide accurate estimate of physical observables such as energy and density of states based on the predicted Green's function.</li>
+</ul>
+<h3 id="force-field-method"><a class="toclink" href="2024/12/20/neural-network-models-for-chemistry/#force-field-method">Force Field Method</a></h3>
+<h4 id="kernel-method"><a class="toclink" href="2024/12/20/neural-network-models-for-chemistry/#kernel-method">Kernel Method</a></h4>
+<ul>
+<li><a href="https://github.com/lab-cosmo/wigner_kernels.git">wigner_kernel</a><br />
+  They propose a novel density-based method which involves computing “Wigner kernels”. </li>
+</ul>
+<h4 id="descriptor-domain"><a class="toclink" href="2024/12/20/neural-network-models-for-chemistry/#descriptor-domain">Descriptor Domain</a></h4>
+<ul>
+<li><a href="https://github.com/deepmodeling/deepmd-kit">DeePMD</a>
+<br>A package designed to minimize the effort required to build deep learning based model of interatomic potential energy and force field and to perform molecular dynamics.</li>
+<li><a href="https://github.com/aiqm/torchani">Torch-ANI</a>
+<br>TorchANI is a pytorch implementation of ANI model.</li>
+<li><a href="https://github.com/torchmd/mdgrad/tree/pair">mdgrad</a><br />
+Pytorch differentiable molecular dynamics</li>
+<li><a href="https://github.com/PaulLHouston/PESPIP">PESPIP</a><br />
+Mathematica programs for choosing the best basis of permutational invariant polynomials for fitting a potential energy surface</li>
+</ul>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li><a href="http://public-sani.onschrodinger.com/">Schrodinger-ANI</a><br />
+A neural network potential energy function for use in drug discovery, with chemical element support extended from 41% to 94% of druglike molecules based on ChEMBL.</li>
+<li><a href="https://github.com/learningmatter-mit/NeuralForceField">NerualForceFild</a>
+<br>The Neural Force Field (NFF) code is an API based on SchNet, DimeNet, PaiNN and DANN. It provides an interface to train and evaluate neural networks for force fields. It can also be used as a property predictor that uses both 3D geometries and 2D graph information.</li>
+<li><a href="https://github.com/openmm/NNPOps">NNPOps</a>
+<br>The goal of this project is to promote the use of neural network potentials (NNPs) by providing highly optimized, open-source implementations of bottleneck operations that appear in popular potentials.</li>
+<li><a href="https://www.uni-goettingen.de/de/software/616512.html">RuNNer</a>
+<br>A program package for constructing high-dimensional neural network potentials,4G-HDNNPs,3G-HDNNPs.</li>
+<li><a href="https://github.com/atomisticnet/aenet">aenet</a>
+<br>The Atomic Energy NETwork (ænet) package is a collection of tools for the construction and application of atomic interaction potentials based on artificial neural networks.</li>
+<li><a href="http://www.sgdml.org/">sGDML</a>
+<br> Symmetric Gradient Domain Machine Learning</li>
+<li><a href="https://github.com/libAtoms/GAP">GAP</a>
+<br>This package is part of QUantum mechanics and Interatomic Potentials</li>
+<li><a href="https://github.com/libAtoms/QUIP">QUIP</a>
+<br>The QUIP package is a collection of software tools to carry out molecular dynamics simulations. It implements a variety of interatomic potentials and tight binding quantum mechanics, and is also able to call external packages, and serve as plugins to other software such as LAMMPS, CP2K and also the python framework ASE.</li>
+<li><a href="https://github.com/RowleyGroup/NNP-MM">NNP-MM</a>
+<br>NNP/MM embeds a Neural Network Potential into a conventional molecular mechanical (MM) model.</li>
+<li><a href="https://github.com/BaratiLab/GAMD">GAMD</a>
+<br>Data and code for Graph neural network Accelerated Molecular Dynamics.</li>
+<li><a href="https://matlantis.com/">PFP</a>
+<br>Here we report a development of universal NNP called PreFerred Potential (PFP), which is able to handle any combination of 45 elements.
+Particular emphasis is placed on the datasets, which include a diverse set of virtual structures used to attain the universality.</li>
+<li><a href="https://codeocean.com/capsule/4358608/tree">TeaNet</a>
+<br>universal neural network interatomic potential inspired by iterative electronic relaxations.</li>
+<li><a href="https://github.com/CompPhysVienna/n2p2">n2p2</a>
+<br>This repository provides ready-to-use software for high-dimensional neural network potentials in computational physics and chemistry.</li>
+<li><a href="https://github.com/aiqm/aimnet">AIMNET</a><br />
+This repository contains reference AIMNet implementation along with some examples and menchmarks.</li>
+<li><a href="https://github.com/isayevlab/AIMNet2">AIMNet2</a><br />
+A general-purpose neural netrork potential for organic and element-organic molecules.</li>
+<li><a href="https://github.com/sandialabs/aevmod">aevmod</a><br />
+This package provides functionality for computing an atomic environment vector (AEV), as well as its Jacobian and Hessian.</li>
+<li><a href="https://github.com/AIforGreatGood/charge3net">charge3net</a> <br />
+Official implementation of ChargeE3Net, introduced in Higher-Order Equivariant Neural Networks for Charge Density Prediction in Materials.</li>
+<li><a href="https://github.com/reaxnet/jax-nb">jax-nb</a><br />
+  This is a JAX implementation of Polarizable Charge Equilibrium (PQEq) and DFT-D3 dispersion correction.</li>
+</ul>
+<h4 id="graph-domain"><a class="toclink" href="2024/12/20/neural-network-models-for-chemistry/#graph-domain">Graph Domain</a></h4>
+<ul>
+<li><a href="https://github.com/mir-group/nequip">Nequip</a>
+<br>NequIP is an open-source code for building E(3)-equivariant interatomic potentials.</li>
+<li><a href="https://github.com/e3nn/e3nn">E3NN</a><br />
+Euclidean neural networks,The aim of this library is to help the development of E(3) equivariant neural networks. It contains fundamental mathematical operations such as tensor products and spherical harmonics.</li>
+<li><a href="https://github.com/atomistic-machine-learning/SchNet">SchNet</a>
+<br>SchNet is a deep learning architecture that allows for spatially and chemically resolved insights into quantum-mechanical observables of atomistic systems.</li>
+<li><a href="https://github.com/atomistic-machine-learning/schnetpack">SchNetPack</a>
+<br>SchNetPack aims to provide accessible atomistic neural networks that can be trained and applied out-of-the-box, while still being extensible to custom atomistic architectures.
+contains <code>schnet</code>,<code>painn</code>,<code>filedschnet</code>,<code>so3net</code></li>
+<li><a href="https://github.com/X1X1010/XequiNet">XequiNet</a>
+  XequiNet is an equivariant graph neural network for predicting the properties of chemical molecules or periodical systems.</li>
+<li><a href="https://github.com/atomistic-machine-learning/G-SchNet">G-SchNet</a>
+<br>Implementation of G-SchNet - a generative model for 3d molecular structures.</li>
+<li><a href="https://github.com/MMunibas/PhysNet">PhysNet</a>
+<br>PhysNet: A Neural Network for Predicting Energies, Forces, Dipole Moments and Partial Charges.</li>
+<li><a href="https://github.com/gasteigerjo/dimenet">DimeNet</a>
+<br>Directional Message Passing Neural Network.</li>
+<li><a href="https://github.com/TUM-DAML/gemnet_pytorch">GemNet</a>
+<br>Universal Directional Graph Neural Networks for Molecules.</li>
+<li><a href="https://github.com/Frank-LIU-520/DeepMoleNet">DeePMoleNet</a>
+<br>DeepMoleNet is a deep learning package for molecular properties prediction.</li>
+<li><a href="https://github.com/helloyesterday/AirNet">AirNet</a>
+<br>A new GNN-based deep molecular model by MindSpore.</li>
+<li><a href="https://github.com/torchmd/torchmd-net">TorchMD-Net</a>
+<br>TorchMD-NET provides graph neural networks and equivariant transformer neural networks potentials for learning molecular potentials.</li>
+<li><a href="https://github.com/binghuang2018/aqml">AQML</a>
+<br>AQML is a mixed Python/Fortran/C++ package, intends to simulate quantum chemistry problems through the use of the fundamental building blocks of larger systems.</li>
+<li><a href="https://github.com/jparkhill/TensorMol">TensorMol</a>
+<br>A pakcages of NN model chemistry, contains Behler-Parrinello with electrostatics, Many Body Expansion Bonds in Molecules NN, Atomwise, Forces, Inductive Charges.</li>
+<li><a href="https://github.com/pfnet-research/charge_transfer_nnp">charge_transfer_nnp</a><br />
+About Graph neural network potential with charge transfer with nequip model.</li>
+<li><a href="https://amp.readthedocs.io/en/latest/">AMP</a><br />
+Amp: A modular approach to machine learning in atomistic simulations(<a href="https://github.com/ulissigroup/amptorch">https://github.com/ulissigroup/amptorch</a>)</li>
+<li><a href="https://github.com/andy90/SCFNN">SCFNN</a><br />
+A self consistent field neural network (SCFNN) model.</li>
+<li><a href="https://github.com/google/jax-md">jax-md</a><br />
+ JAX MD is a functional and data driven library. Data is stored in arrays or tuples of arrays and functions transform data from one state to another.</li>
+<li><a href="https://github.com/zhangylch/EANN">EANN</a><br />
+Embedded Atomic Neural Network (EANN) is a physically-inspired neural network framework. The EANN package is implemented using the PyTorch framework used to train interatomic potentials, dipole moments, transition dipole moments and polarizabilities of various systems.</li>
+<li><a href="https://github.com/zhangylch/REANN">REANN</a><br />
+ Recursively embedded atom neural network (REANN) is a PyTorch-based end-to-end multi-functional Deep Neural Network Package for Molecular, Reactive and Periodic Systems.</li>
+<li><a href="https://github.com/zhangylch/FIREANN">FIREANN</a><br />
+ Field-induced Recursively embedded atom neural network (FIREANN) is a PyTorch-based end-to-end multi-functional Deep Neural Network Package for Molecular, Reactive and Periodic Systems under the presence of the external field with rigorous rotational equivariance. </li>
+<li><a href="https://github.com/kyonofx/MDsim">MDsim</a><br />
+Training and simulating MD with ML force fields</li>
+<li><a href="https://github.com/Open-Catalyst-Project/ocp">ForceNet</a> <br />
+We demonstrate that force-centric GNN models without any explicit physical constraints are able to predict atomic forces more accurately than state-of-the-art energy centric GNN models, while being faster both in training and inference.</li>
+<li><a href="https://github.com/divelab/DIG">DIG</a><br />
+A library for graph deep learning research.</li>
+<li><a href="https://github.com/Open-Catalyst-Project/ocp">scn</a><br />
+Spherical Channels for Modeling Atomic Interactions</li>
+<li><a href="https://github.com/Open-Catalyst-Project/ocp">spinconv</a><br />
+Rotation Invariant Graph Neural Networks using Spin Convolutions.</li>
+<li><a href="https://github.com/lanl/hippynn">HIPPYNN</a><br />
+a modular library for atomistic machine learning with pytorch.</li>
+<li><a href="https://github.com/microsoft/ViSNet">VisNet</a>   <br />
+a scalable and accurate geometric deep learning potential for molecular dynamics simulation</li>
+<li><a href="https://github.com/mir-group/flare">flare</a><br />
+FLARE is an open-source Python package for creating fast and accurate interatomic potentials.)  </li>
+<li><a href="https://github.com/usnistgov/alignn">alignn</a><br />
+The Atomistic Line Graph Neural Network (<a href="https://www.nature.com/articles/s41524-021-00650-1">https://www.nature.com/articles/s41524-021-00650-1</a>) introduces a new graph convolution layer that explicitly models both two and three body interactions in atomistic systems.</li>
+<li><a href="https://github.com/thorben-frank/mlff">So3krates</a><br />
+Repository for training, testing and developing machine learned force fields using the So3krates model. </li>
+<li><a href="https://github.com/openmm/spice-models/tree/main/five-et">spice-model-five-net</a><br />
+Contains the five equivariant transformer models about the spice datasets(<a href="https://github.com/openmm/spice-dataset/releases/tag/1.1">https://github.com/openmm/spice-dataset/releases/tag/1.1</a>). </li>
+<li><a href="https://github.com/choderalab/sake">sake</a><br />
+Spatial Attention Kinetic Networks with E(n)-Equivariance</li>
+<li><a href="https://github.com/Bayer-Group/eqgat">eqgat</a><br />
+Pytorch implementation for the manuscript Representation Learning on Biomolecular Structures using Equivariant Graph Attention</li>
+<li><a href="https://github.com/vict0rsch/phast">phast</a><br />
+PyTorch implementation for PhAST: Physics-Aware, Scalable and Task-specific GNNs for Accelerated Catalyst Design</li>
+<li><a href="https://github.com/GraphPKU/GNN-LF">GNN-LF</a><br />
+Graph Neural Network With Local Frame for Molecular Potential Energy Surface  </li>
+<li><a href="https://arxiv.org/abs/1906.04015">Cormorant</a><br />
+We propose Cormorant, a rotationally covariant neural network architecture for learning the behavior and properties of complex many-body physical systems.</li>
+<li><a href="https://github.com/mfinzi/LieConv">LieConv</a><br />
+Generalizing Convolutional Neural Networks for Equivariance to Lie Groups on Arbitrary Continuous Data</li>
+<li><a href="https://github.com/torchmd/torchmd-net">torchmd-net/ET</a><br />
+Neural network potentials based on graph neural networks and equivariant transformers</li>
+<li><a href="https://github.com/TUM-DAML/gemnet_tf">GemNet</a><br />
+GemNet: Universal Directional Graph Neural Networks for Molecules</li>
+<li><a href="https://github.com/atomicarchitects/equiformer">equiformer</a><br />
+Equiformer: Equivariant Graph Attention Transformer for 3D Atomistic Graphs</li>
+<li><a href="https://arxiv.org/abs/2304.13542">VisNet-LSRM</a><br />
+Inspired by fragmentation-based methods, we propose the Long-Short-Range Message-Passing (LSR-MP) framework as a generalization of the existing equivariant graph neural networks (EGNNs) with the intent to incorporate long-range interactions efficiently and effectively. </li>
+<li><a href="https://github.com/zachglick/AP-Net">AP-net</a><br />
+AP-Net: An atomic-pairwise neural network for smooth and transferable interaction potentials</li>
+<li><a href="https://github.com/ACEsuit/mace">MACE</a><br />
+MACE provides fast and accurate machine learning interatomic potentials with higher order equivariant message passing.</li>
+<li><a href="https://github.com/ACEsuit/mace-off">MACE-OFF23</a><br />
+ This repository contains the MACE-OFF23 pre-traained transferable organic force fields. </li>
+<li><a href="https://arxiv.org/pdf/2303.16982.pdf">Unimol+</a>
+Uni-Mol+ first generates a raw 3D molecule conformation from inexpensive methods such as RDKit. Then, the raw conformation is iteratively updated to its target DFT equilibrium conformation using neural networks, and the learned conformation will be used to predict the QC properties.</li>
+<li><a href="https://proceedings.mlr.press/v162/du22e/du22e.pdf">ColfNet</a><br />
+Inspired by differential geometry and physics, we introduce equivariant local complete frames to graph neural networks, such that tensor information at given orders can be projected onto the frames.</li>
+<li><a href="https://github.com/divelab/AIRS">AIRS</a><br />
+AIRS is a collection of open-source software tools, datasets, and benchmarks associated with our paper entitled “Artificial Intelligence for Science in Quantum, Atomistic, and Continuum Systems”.</li>
+<li><a href="https://github.com/jla-gardner/nnp-pre-training">nnp-pre-training</a><br />
+  Synthetic pre-training for neural-network interatomic potentials</li>
+<li><a href="https://github.com/onewhich/AlF_dimer">AlF_dimer</a><br />
+  a global potential for AlF-AlF dimer</li>
+<li><a href="https://github.com/jmbowma/q-AQUA">q-AQUA,q-AQUA-pol</a><br />
+  CCSD(T) potential for water, interfaced with TTM3-F</li>
+<li><a href="https://github.com/yuanqidu/LeftNet">LeftNet</a><br />
+  A New Perspective on Building Efficient and Expressive 3D Equivariant Graph Neural Networks</li>
+<li><a href="https://github.com/duartegroup/mlp-train">mlp-train</a> <br />
+  General machine learning potentials (MLP) training for molecular systems in gas phase and solution</li>
+<li><a href="https://github.com/freecurve/interx_arrow-nn_suite">ARROW-NN</a><br />
+  The simulation conda package contains the InterX ARBALEST molecular dynamics simulation software along with all the necessary database files to run ARROW-NN molecular simulations</li>
+<li><a href="https://arxiv.org/abs/2309.15126">SO3krates with transformer</a><br />
+  we propose a transformer architecture called SO3krates that combines sparse equivariant representations</li>
+<li><a href="https://chemrxiv.org/engage/api-gateway/chemrxiv/assets/orp/resource/item/655532b7dbd7c8b54b56a3a0/original/incorporating-neural-networks-into-the-amoeba-polarizable-force-field.pdf">AMOEBA+NN</a><br />
+  It present an integrated non-reactive hybrid model, AMOEBA+NN, which employs the AMOEBA potential for the short- and long-range non-bonded interactions and an NNP to capture the remaining local (covalent) contributions</li>
+<li><a href="https://github.com/guaguabujianle/LEIGNN">LEIGNN</a>
+  A lightweight equivariant interaction graph neural network (LEIGNN) that can enable accurate and efficient interatomic potential and force predictions in crystals. Rather than relying on higher-order representations, LEIGNN employs a scalar-vector dual representation to encode equivariant feature.</li>
+<li><a href="https://github.com/freecurve/interx_arrow-nn_suite">Arrow NN</a><br />
+  A hybrid wide-coverage intermolecular interaction model consisting of an analytically polarizable force field combined with a short-range neural network correction for the total intermolecular interaction energy.</li>
+<li><a href="https://github.com/XieResearchGroup/Physics-aware-Multiplex-GNN">PAMNet</a><br />
+PAMNet(Physics-aware Multiplex Graph Neural Network) is an improved version of MXMNet and outperforms state-of-the-art baselines regarding both accuracy and efficiency in diverse tasks including small molecule property prediction, RNA 3D structure prediction, and protein-ligand binding affinity prediction.</li>
+<li><a href="https://github.com/davidbuterez/multi-fidelity-gnns-for-drug-discovery-and-quantum-mechanics">Multi-fidelity GNNs</a><br />
+Multi-fidelity GNNs for drug discovery and quantum mechanics</li>
+<li><a href="https://github.com/cuitaoyong/GPIP">GPIP</a><br />
+GPIP: Geometry-enhanced Pre-training on Interatomic Potentials.they propose a geometric structure learning framework that leverages the unlabeled configurations to improve the performance of MLIPs. Their framework consists of two stages: firstly, using CMD simulations to generate unlabeled configurations of the target molecular system; and secondly, applying geometry-enhanced self-supervised learning techniques, including masking, denoising, and contrastive learning, to capture structural information </li>
+<li>
+<p><a href="https://github.com/nec-research/ictp">ictp</a><br />
+Official repository for the paper "Higher Rank Irreducible Cartesian Tensors for Equivariant Message Passing". It is built upon the ALEBREW repository and implements irreducible Cartesian tensors and their products.</p>
+</li>
+<li>
+<p><a href="https://github.com/CederGroupHub/chgnet">CHGNet</a><br />
+A pretrained universal neural network potential for charge-informed atomistic modeling (see publication) </p>
+</li>
+<li><a href="https://arxiv.org/abs/2402.19327">GPTFF</a><br />
+GPTFF: A high-accuracy out-of-the-box universal AI force field for arbitrary inorganic materials</li>
+<li><a href="https://github.com/Luthaf/rascaline">rascaline</a><br />
+Rascaline is a library for the efficient computing of representations for atomistic machine learning also called "descriptors" or "fingerprints". These representations can be used for atomistic machine learning (ml) models including ml potentials, visualization or similarity analysis.</li>
+</ul>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li><a href="https://doi.org/10.1039/D4SC01109K">PairNet-OPs/PairFE-Net</a><br />
+In PairFE-Net, an atomic structure is encoded using pairwise nuclear repulsion forces</li>
+</ul>
+<h4 id="transformer-domain"><a class="toclink" href="2024/12/20/neural-network-models-for-chemistry/#transformer-domain">Transformer Domain</a></h4>
+<ul>
+<li><a href="https://github.com/OUnke/SpookyNet">SpookyNet</a>
+<br>Spookynet: Learning force fields with electronic degrees of freedom and nonlocal effects.</li>
+<li><a href="https://github.com/dellacortelab/trip">trip</a><br />
+Transformer Interatomic Potential (TrIP): a chemically sound potential based on the SE(3)-Transformer</li>
+</ul>
+<h4 id="empirical-force-field"><a class="toclink" href="2024/12/20/neural-network-models-for-chemistry/#empirical-force-field">Empirical force field</a></h4>
+<ul>
+<li><a href="https://github.com/graeter-group/grappa">grappa</a><br />
+  A machine-learned molecular mechanics force field using a deep graph attentional network</li>
+<li><a href="https://github.com/choderalab/espaloma">espaloma</a><br />
+Extensible Surrogate Potential of Ab initio Learned and Optimized by Message-passing Algorithm.</li>
+<li><a href="https://github.com/thomasple/FeNNol">FeNNol</a><br />
+FeNNol is a library for building, training and running neural network potentials for molecular simulations. It is based on the JAX library and is designed to be fast and flexible.</li>
+</ul>
+<h3 id="semi-empirical-quantum-mechanical-method"><a class="toclink" href="2024/12/20/neural-network-models-for-chemistry/#semi-empirical-quantum-mechanical-method">Semi-Empirical Quantum Mechanical Method</a></h3>
+<ul>
+<li><a href="https://arxiv.org/abs/2107.00299">OrbNet; OrbNet Denali</a>
+<br>OrbNet Denali: A machine learning potential for biological and organic chemistry with semi-empirical cost and DFT accuracy.</li>
+</ul>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li><a href="https://doi.org/10.1073/pnas.2205221119"> OrbNet-Equi</a><br />
+INFORMING GEOMETRIC DEEP LEARNING WITH ELECTRONIC INTERACTIONS TO ACCELERATE QUANTUM CHEMISTRY</li>
+</ul>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li>
+<p><a href="https://ml4physicalsciences.github.io/2024/files/NeurIPS_ML4PS_2024_214.pdf">OrbNet-Spin</a><br />
+OrbNet-Spin incorporates a spin-polarized treatment into the underlying semiempirical quantum mechanics orbital featurization and adjusts the model architecture accordingly while maintaining the geometrical constraints.</p>
+</li>
+<li>
+<p><a href="https://doi.org/10.1038/s41467-021-27340-2">AIQM1</a>
+<br>Artificial intelligence-enhanced quantum chemical method with broad applicability.</p>
+</li>
+</ul>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li><a href="https://doi.org/10.1021/acs.jctc.0c00217">BpopNN</a>
+<br>Incorporating Electronic Information into Machine Learning Potential Energy Surfaces via Approaching the Ground-State Electronic Energy as a Function of Atom-Based Electronic Populations.</li>
+<li><a href="https://github.com/josejimenezluna/delfta">Delfta</a>
+<br>The DelFTa application is an easy-to-use, open-source toolbox for predicting quantum-mechanical properties of drug-like molecules. Using either ∆-learning (with a GFN2-xTB baseline) or direct-learning (without a baseline), the application accurately approximates DFT reference values (ωB97X-D/def2-SVP).</li>
+<li><a href="https://github.com/lanl/PYSEQM">PYSEQM</a><br />
+PYSEQM is a Semi-Empirical Quantum Mechanics package implemented in PyTorch.</li>
+<li><a href="https://github.com/djyaron/DFTBML">DFTBML</a><br />
+DFTBML provides a systematic way to parameterize the Density Functional-based Tight Binding (DFTB) semiempirical quantum chemical method for different chemical systems by learning the underlying Hamiltonian parameters rather than fitting the potential energy surface directly.</li>
+<li><a href="https://github.com/Honza-R/mopac-ml">mopac-ml</a><br />
+MOPAC-ML implements the PM6-ML method, a semiempirical quantum-mechanical computational method that augments PM6 with a machine learning (ML) correction. It acts as a wrapper calling a modified version of MOPAC, to which it provides the ML correction.</li>
+</ul>
+<h3 id="coarse-grained-method"><a class="toclink" href="2024/12/20/neural-network-models-for-chemistry/#coarse-grained-method">Coarse-Grained Method</a></h3>
+<ul>
+<li><a href="https://github.com/coarse-graining/cgnet">cgnet</a>
+<br>Coarse graining for molecular dynamics</li>
+<li><a href="https://arxiv.org/ftp/arxiv/papers/2209/2209.12948.pdf">SchNet-CG</a><br />
+We explore the application of SchNet models to obtain a CG potential for liquid benzene, investigating the effect of model architecture and hyperparameters on the thermodynamic, dynamical, and structural properties of the simulated CG systems, reporting and discussing challenges encountered and future directions envisioned.</li>
+<li><a href="https://arxiv.org/pdf/2310.18278.pdf">CG-SchNET</a><br />
+By combining recent deep learning methods with a large and diverse training set of all-atom protein simulations, we here develop a bottom-up CG force field with chemical transferability, which can be used for extrapolative
+molecular dynamics on new sequences not used during model parametrization.</li>
+<li><a href="https://github.com/torchmd/torchmd-protein-thermodynamics">torchmd-protein-thermodynamics</a><br />
+This repository contains code, data and tutarial for reproducing the paper "Machine Learning Coarse-Grained Potentials of Protein Thermodynamics". <a href="https://arxiv.org/abs/2212.07492">https://arxiv.org/abs/2212.07492</a></li>
+<li><a href="https://github.com/compsciencelab/torchmd-exp">torchmd-exp</a> 
+This repository contains a method for training a neural network potential for coarse-grained proteins using unsupervised learning</li>
+<li><a href="https://github.com/jasonzzj97/AICG">AICG</a><br />
+Learning coarse-grained force fields for fibrogenesis modeling(<a href="https://doi.org/10.1016/j.cpc.2023.108964">https://doi.org/10.1016/j.cpc.2023.108964</a>)</li>
+</ul>
+<h3 id="enhanced-sampling-method"><a class="toclink" href="2024/12/20/neural-network-models-for-chemistry/#enhanced-sampling-method">Enhanced Sampling Method</a></h3>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li>
+<p><a href="https://doi.org/10.1073/pnas.1907975116">VES-NN</a><br />
+Neural networks-based variationallyenhanced sampling</p>
+</li>
+<li>
+<p><a href="https://github.com/weiHelloWorld/accelerated_sampling_with_autoencoder">Accelerated_sampling_with_autoencoder</a><br />
+Accelerated sampling framework with autoencoder-based method</p>
+</li>
+</ul>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li><a href="https://arxiv.org/pdf/2306.09111v2.pdf">Enhanced Sampling with Machine Learning: A Review</a><br />
+we highlight successful strategies like dimensionality reduction, reinforcement learning, and fl ow-based methods. Finally, we discuss open problems at the exciting ML-enhanced MD interface</li>
+<li><a href="https://github.com/luigibonati/mlcolvar">mlcolvar</a><br />
+mlcolvar is a Python library aimed to help design data-driven collective-variables (CVs) for enhanced sampling simulations. </li>
+</ul>
+<h3 id="qmmm-model"><a class="toclink" href="2024/12/20/neural-network-models-for-chemistry/#qmmm-model">QM/MM Model</a></h3>
+<ul>
+<li><a href="https://github.com/RowleyGroup/NNP-MM">NNP-MM</a>
+<br>NNP/MM embeds a Neural Network Potential into a conventional molecular mechanical (MM) model. We have implemented this using the Custom QM/MM features of NAMD 2.13, which interface NAMD with the TorchANI NNP python library developed by the Roitberg and Isayev groups.</li>
+<li><a href="https://github.com/TinkerTools/tinker-hp/blob/master/GPU/Deep-HP.md">DeeP-HP</a>
+<br> Scalable hybrid deep neural networks/polarizable potentials biomolecular simulations including long-range effects</li>
+</ul>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li><a href="https://onlinelibrary.wiley.com/doi/10.1002/jcc.27313">PairF-Net</a><br />
+ Here, we further develop the PairF-Net model to intrinsically incorporate energy conservation and couple the model to a molecular mechanical (MM) environment within the OpenMM package</li>
+<li><a href="https://github.com/emedio/embedding">embedding</a><br />
+ This work presents a variant of an electrostatic embedding scheme that allows the embedding of arbitrary machine learned potentials trained on molecular systems in vacuo.</li>
+<li><a href="https://github.com/atomistic-machine-learning/field_schnet">field_schnet</a><br />
+FieldSchNet provides a deep neural network for modeling the interaction of molecules and external environments as described.</li>
+<li><a href="https://github.com/MALBECC/MLMM-embeddings-assessment-paper">MLMM</a><br />
+  This repository contains data and software regarding the paper submited to JCIM, entitled "Assessment of embedding schemes in a hybrid machine learning/classical potentials (ML/MM) approach".</li>
+</ul>
+<h3 id="charge-model"><a class="toclink" href="2024/12/20/neural-network-models-for-chemistry/#charge-model">Charge Model</a></h3>
+<ul>
+<li><a href="https://github.com/choderalab/gimlet">gimlet</a><br />
+Graph Inference on Molecular Topology. A package for modelling, learning, and inference on molecular topological space written in Python and TensorFlow.</li>
+</ul>
+<h3 id="post-hf-method"><a class="toclink" href="2024/12/20/neural-network-models-for-chemistry/#post-hf-method">Post-HF Method</a></h3>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/acs.jpca.0c11270">LNO-CCSD(T)</a></li>
+</ul>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li><a href="https://doi.org/10.1021/acs.jpca.0c11270">DLPNO-CCSD(T)</a></li>
+</ul>
+<!-- markdown-link-check-disable-next-line -->
+<ul>
+<li><a href="https://doi.org/10.1021/acs.jctc.7b00180">PNO-CCSD(T)</a></li>
+</ul>
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">

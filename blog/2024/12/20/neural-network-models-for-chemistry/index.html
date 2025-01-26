@@ -2447,12 +2447,36 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Quantum Chemistry Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantum-monte-carlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Monte Carlo
+    </span>
+  </a>
+  
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#green-function" class="md-nav__link">
     <span class="md-ellipsis">
       Green Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-monte-carlo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Monte Carlo
     </span>
   </a>
   
@@ -2511,6 +2535,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Empirical force field">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-sqm-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      with SQM feature
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2524,6 +2563,21 @@
       Semi-Empirical Quantum Mechanical Method
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Semi-Empirical Quantum Mechanical Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#without-sqm-fearure" class="md-nav__link">
+    <span class="md-ellipsis">
+      without SQM fearure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2715,8 +2769,6 @@ Pushing the Frontiers of Density Functionals by Solving the Fractional Electron 
 Completing density functional theory by machine-learning hidden messages from molecules.</li>
 <li><a href="https://github.com/deepmind/ferminet">FemiNet</a><br />
 FermiNet is a neural network for learning highly accurate ground state wavefunctions of atoms and molecules using a variational Monte Carlo approach.</li>
-<li><a href="https://github.com/deepqmc/deepqmc">DeePQMC</a><br />
-DeepQMC implements variational quantum Monte Carlo for electrons in molecules, using deep neural networks written in PyTorch as trial wave functions.</li>
 <li><a href="https://www.nature.com/articles/s41557-020-0544-y#Bib1">PauliNet</a><br />
 PauliNet builds upon HF or CASSCF orbitals as a physically meaningful baseline and takes a neural network approach to the SJB wavefunction in order tocorrect this baseline towards a high-accuracy solution.</li>
 <li><a href="https://github.com/mdsunivie/deeperwin">DeePErwin</a><br />
@@ -2786,12 +2838,22 @@ The accuracy of density functional theory hinges on the approximation of nonloca
 Machine learning methods are promising in significantly accelerating charge density prediction, yet existing approaches either lack accuracy or scalability. They  propose a recipe that can achieve both. In particular, they identify three key ingredients: (1) representing the charge density with atomic and virtual orbitals (spherical fields centered at atom/virtual coordinates); (2) using expressive and learnable orbital basis sets (basis function for the spherical fields); and (3) using high-capacity equivariant neural network architecture</li>
 <li><a href="https://github.com/TheorChemGroup/physics-informed-DFT">physics-informed-DFT</a><br />
 We have developed an approach for physics-informed training of flexible empirical density functionals. In this approach, the “physics knowledge” is transferred from PBE, or any other exact-constraints-based functional, using local exchange−correlation energy density regularization, i.e., by adding its local energies into the training set</li>
+<li><a href="https://github.com/zhangylch/SchrodingerNet">SchrodingerNet</a> <br />
+ SchrödingerNet offers a novel approach to solving the full electronic-nuclear Schrödinger equation (SE) by defining a custom loss function designed to equalize local energies throughout the system.</li>
+<li><a href="https://gitlab.com/pavanello-research-group/qmlearn">qmlearn</a><br />
+  Quantum Machine Learning by learning one-body reduced density matrices in the AO basis.</li>
 </ul>
-<h2 id="green-function">Green Function<a class="headerlink" href="#green-function" title="Permanent link">&para;</a></h2>
+<h3 id="quantum-monte-carlo">Quantum Monte Carlo<a class="headerlink" href="#quantum-monte-carlo" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/deepqmc/deepqmc">DeePQMC</a><br />
+DeepQMC implements variational quantum Monte Carlo for electrons in molecules, using deep neural networks written in PyTorch as trial wave functions.</li>
+</ul>
+<h3 id="green-function">Green Function<a class="headerlink" href="#green-function" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://arxiv.org/abs/2312.14680">DeepGreen</a><br />
 The many-body Green's function provides access to electronic properties beyond density functional theory level in ab inito calculations. It present proof-of-concept benchmark results for both molecules and simple periodic systems, showing that our method is able to provide accurate estimate of physical observables such as energy and density of states based on the predicted Green's function.</li>
 </ul>
+<h2 id="quantum-monte-carlo_1">Quantum Monte Carlo<a class="headerlink" href="#quantum-monte-carlo_1" title="Permanent link">&para;</a></h2>
 <h2 id="force-field-method">Force Field Method<a class="headerlink" href="#force-field-method" title="Permanent link">&para;</a></h2>
 <h3 id="kernel-method">Kernel Method<a class="headerlink" href="#kernel-method" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3010,6 +3072,7 @@ Transformer Interatomic Potential (TrIP): a chemically sound potential based on 
 E3x is a JAX library for constructing efficient E(3)-equivariant deep learning architectures built on top of Flax. The goal is to provide common neural network building blocks for E(3)-equivariant architectures to make the development of models operating on three-dimensional data (point clouds, polygon meshes, etc.) easier.</li>
 </ul>
 <h3 id="empirical-force-field">Empirical force field<a class="headerlink" href="#empirical-force-field" title="Permanent link">&para;</a></h3>
+<h4 id="with-sqm-feature">with SQM feature<a class="headerlink" href="#with-sqm-feature" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://github.com/graeter-group/grappa">grappa</a><br />
   A machine-learned molecular mechanics force field using a deep graph attentional network</li>
@@ -3032,27 +3095,30 @@ INFORMING GEOMETRIC DEEP LEARNING WITH ELECTRONIC INTERACTIONS TO ACCELERATE QUA
 </ul>
 <!-- markdown-link-check-disable-next-line -->
 <ul>
-<li>
-<p><a href="https://ml4physicalsciences.github.io/2024/files/NeurIPS_ML4PS_2024_214.pdf">OrbNet-Spin</a><br />
-OrbNet-Spin incorporates a spin-polarized treatment into the underlying semiempirical quantum mechanics orbital featurization and adjusts the model architecture accordingly while maintaining the geometrical constraints.</p>
-</li>
-<li>
-<p><a href="https://doi.org/10.1038/s41467-021-27340-2">AIQM1</a>
-<br>Artificial intelligence-enhanced quantum chemical method with broad applicability.</p>
-</li>
+<li><a href="https://ml4physicalsciences.github.io/2024/files/NeurIPS_ML4PS_2024_214.pdf">OrbNet-Spin</a> <br />
+OrbNet-Spin incorporates a spin-polarized treatment into the underlying semiempirical quantum mechanics orbital featurization and adjusts the model architecture accordingly while maintaining the geometrical constraints.</li>
+<li><a href="https://github.com/aiqm/EHM-ML">EHM-ML</a> 
+Machine Learned Hückel Theory: Interfacing Physics and Deep Neural Networks. The Hückel Hamiltonian is an incredibly simple tight-binding model known for its ability to capture qualitative physics phenomena arising from electron interactions in molecules and materials.</li>
+<li><a href="https://github.com/djyaron/DFTBML">DFTBML</a><br />
+DFTBML provides a systematic way to parameterize the Density Functional-based Tight Binding (DFTB) semiempirical quantum chemical method for different chemical systems by learning the underlying Hamiltonian parameters rather than fitting the potential energy surface directly.</li>
+</ul>
+<h4 id="without-sqm-fearure">without SQM fearure<a class="headerlink" href="#without-sqm-fearure" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://doi.org/10.1038/s41467-021-27340-2">AIQM1, AIQM2</a> 
+<br>Artificial intelligence-enhanced quantum chemical method with broad applicability.</li>
 </ul>
 <!-- markdown-link-check-disable-next-line -->
 <ul>
-<li><a href="https://doi.org/10.1021/acs.jctc.0c00217">BpopNN</a>
+<li><a href="https://doi.org/10.1021/acs.jctc.0c00217">BpopNN</a> 
 <br>Incorporating Electronic Information into Machine Learning Potential Energy Surfaces via Approaching the Ground-State Electronic Energy as a Function of Atom-Based Electronic Populations.</li>
-<li><a href="https://github.com/josejimenezluna/delfta">Delfta</a>
+<li><a href="https://github.com/josejimenezluna/delfta">Delfta</a> 
 <br>The DelFTa application is an easy-to-use, open-source toolbox for predicting quantum-mechanical properties of drug-like molecules. Using either ∆-learning (with a GFN2-xTB baseline) or direct-learning (without a baseline), the application accurately approximates DFT reference values (ωB97X-D/def2-SVP).</li>
 <li><a href="https://github.com/lanl/PYSEQM">PYSEQM</a><br />
 PYSEQM is a Semi-Empirical Quantum Mechanics package implemented in PyTorch.</li>
-<li><a href="https://github.com/djyaron/DFTBML">DFTBML</a><br />
-DFTBML provides a systematic way to parameterize the Density Functional-based Tight Binding (DFTB) semiempirical quantum chemical method for different chemical systems by learning the underlying Hamiltonian parameters rather than fitting the potential energy surface directly.</li>
-<li><a href="https://github.com/Honza-R/mopac-ml">mopac-ml</a><br />
+<li><a href="https://github.com/Honza-R/mopac-ml">PM6-ML</a><br />
 MOPAC-ML implements the PM6-ML method, a semiempirical quantum-mechanical computational method that augments PM6 with a machine learning (ML) correction. It acts as a wrapper calling a modified version of MOPAC, to which it provides the ML correction.</li>
+<li><a href="https://github.com/X1X1010/XequiNet">xpainn@xTB</a>
+A model can deal with optimization, and frequency prediction</li>
 </ul>
 <h2 id="coarse-grained-method">Coarse-Grained Method<a class="headerlink" href="#coarse-grained-method" title="Permanent link">&para;</a></h2>
 <ul>

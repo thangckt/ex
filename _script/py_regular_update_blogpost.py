@@ -101,7 +101,14 @@ def main():
         url="https://raw.githubusercontent.com/Eipgen/Neural-Network-Models-for-Chemistry/refs/heads/main/README.md",
         title="Neural Network Models for Chemistry",
         date_post="2024-12-20",
-        label=["Python"],
+        label=["Python", "ML"],
+    )
+    ### Post 6
+    update_post(
+        url="https://raw.githubusercontent.com/ml-tooling/best-of-ml-python/refs/heads/main/README.md",
+        title="Best-of Machine Learning with Python",
+        date_post="2025-01-20",
+        label=["Python", "ML"],
     )
     return
 
